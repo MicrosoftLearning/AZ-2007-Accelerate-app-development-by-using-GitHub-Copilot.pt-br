@@ -431,7 +431,7 @@ Use as seguintes etapas para concluir esta seção do exercício:
 
     Inserindo **r** retorna o livro.
 
-1. Verifique se a mensagem "O livro foi devolvido com sucesso" aparece. será exibido.
+1. Verifique se a mensagem "O livro foi devolvido com sucesso" aparece. será exibida.
 
     A mensagem "O livro foi devolvido com sucesso". deve ser seguida pelos detalhes do livro. Os livros devolvidos são marcados com **Returned: True**.
 
