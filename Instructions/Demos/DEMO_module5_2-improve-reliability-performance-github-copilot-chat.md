@@ -1,214 +1,214 @@
 ---
 demo:
-  title: 'Demonstração: Melhorar a confiabilidade e o desempenho do código usando o GitHub Copilot Chat'
-  module: 'Module 5: Implement code improvements using GitHub Copilot tools'
+    title: 'Demo: Improve code reliability and performance by using GitHub Copilot Chat'
+    module: 'Module 5: Implement code improvements using GitHub Copilot tools'
 ---
 
-# Demonstração: Melhorar a confiabilidade e o desempenho do código usando o GitHub Copilot Chat
+# Demo: Improve code reliability and performance by using GitHub Copilot Chat
 
-## Instruções
+## Instructions
 
-As atividades de demonstração são projetadas para um ambiente que inclui os seguintes recursos:
+The demo activities are designed for an environment that includes the following resources:
 
 - Visual Studio Code.
-- A extensão do kit de desenvolvimento em C# para o Visual Studio Code.
-- As extensões do GitHub Copilot e do GitHub Copilot Chat para Visual Studio Code. É necessária uma conta do GitHub com uma assinatura ativa do GitHub Copilot.
-- Projetos de amostras de código criadas usando C#.
+- The C# Dev Kit extension for Visual Studio Code.
+- The GitHub Copilot and GitHub Copilot Chat extensions for Visual Studio Code. A GitHub account with an active subscription for GitHub Copilot is required.
+- Sample code projects created using C#.
 
-**OBSERVAÇÃO**: Recomendamos que os instrutores considerem usar sua própria conta do GitHub e a assinatura do GitHub Copilot para as demonstrações. Isso irá permitir que você controle e personalize seu ambiente de desenvolvimento. Também facilitará o ajuste das demonstrações para atender às necessidades de suas salas de aula.
+**NOTE**: We recommend that instructors consider using their own GitHub account and GitHub Copilot subscription for the demos. This will enable you to control and customize your dev environment. It will also make it easier to adjust the demos to fit the needs of your classrooms.
 
-**IMPORTANTE**: Se você optar por executar as demonstrações no ambiente de laboratório hospedado em vez do seu computador de instrutor, poderá descompactar os aplicativos de exemplo no ambiente hospedado. Você precisará configurar as extensões do GitHub Copilot no ambiente hospedado antes de executar as demonstrações. Você pode perceber que o ambiente hospedado é mais lento do que o seu ambiente local, então talvez precise ajustar o ritmo das demonstrações de acordo.
+**IMPORTANT**: If you choose to run the demos in the hosted lab environment rather than your instructor PC, you can unzip the sample apps in the hosted environment. You will need to configure the GitHub Copilot extensions in the hosted environment before you can run the demos. You may find that the hosted environment is slower than your local environment, so you may need to adjust the pace of the demos accordingly.
 
-### Apresentar a demonstração
+### Introduce the demo
 
-A confiabilidade e o desempenho do código estão intimamente relacionados a aspectos da qualidade do software. Eles são interdependentes das seguintes maneiras:
+Code reliability and performance are closely related aspects of software quality. They are interdependent in the following ways:
 
-- Melhorias em uma área podem afetar positivamente a outra.
-- As deficiências em uma área podem levar a problemas com a outra.
+- Improvements in one area can positively affect the other.
+- Deficiencies in one can lead to problems with the other.
 
 > [!IMPORTANT]
-> Explique aos alunos que esta demonstração não tem como foco as melhores práticas para desenvolver código confiável ou de alto desempenho. Em vez disso, ele se concentra em como usar o GitHub Copilot Chat para gerar sugestões para melhorar a segurança do código em um aplicativo de exemplo. As sugestões não representam as melhores práticas ou as soluções mais abrangentes para confiabilidade e desempenho de código. Os desenvolvedores devem usar seu julgamento e experiência para avaliar e implementar as sugestões fornecidas pelo GitHub Copilot Chat. A implementação de sugestões propostas pelo GitHub Copilot não substitui a necessidade de testes e revisões detalhadas de código.
+> Explain to the students that this demo isn't about best practices for developing reliable or high-performing code. Instead, it focuses on how to use GitHub Copilot Chat to generate suggestions for improving code reliability and performance in a sample application. The suggestions do not represent best practices or comprehensive solutions for code reliability and performance. Developers should use their judgment and expertise to evaluate and implement the suggestions provided by GitHub Copilot Chat. Implementing suggestions proposed by GitHub Copilot does not replace the need for thorough code reviews and testing.
 
-#### Confiabilidade e desempenho do código
+#### Code reliability and performance
 
-Os desenvolvedores devem se esforçar para alcançar um equilíbrio entre a confiabilidade e o desempenho do código. Um equilíbrio bem-sucedido produz os seguintes resultados mutuamente benéficos:
+Developers should strive for a balance between code reliability and performance. A successful balance produces the following mutually beneficial results:
 
-- Aplicativos que atendem aos requisitos funcionais.
-- Aplicativos que oferecem uma experiência de usuário perfeita e eficiente.
+- Applications that meet functional requirements.
+- Applications that deliver a seamless and efficient user experience.
 
-As seções a seguir fornecem uma visão geral sobre confiabilidade e desempenho do código, além de outros fatores que seus alunos devem conhecer.
+The following sections provide an overview of code reliability and performance, along with other factors that your students should be aware of.
 
-##### Examinar a confiabilidade do código
+##### Examine code reliability
 
-A confiabilidade do código refere-se à probabilidade de que o software funcione corretamente em condições específicas e por um determinado período de tempo. Melhorar a confiabilidade do código ajuda a garantir que o software seja executado conforme o esperado e atenda aos requisitos do usuário.
+Code reliability refers to the likelihood that software functions correctly under specific conditions and for a certain period of time. Improving code reliability helps to ensure that your software performs as expected and meets user requirements.
 
-Os desenvolvedores podem considerar os seguintes fatores ao trabalhar em melhorias na confiabilidade de código:
+Developers can consider the following factors when working on code reliability improvements:
 
-- Possíveis problemas: Identificar possíveis problemas no código pode ajudar a impedir que bugs e erros ocorram. Identificar possíveis problemas deve incluir a revisão do código para identificar armadilhas comuns e endereçá-las proativamente.
-- Testes: Testes adequados são cruciais para identificar e corrigir bugs antes que o produto seja lançado. Os testes adequados devem incluir teste de unidade, teste de integração, teste de sistema e teste de aceitação.
-- Tratamento de exceções: Mecanismos adequados de tratamento de exceção podem impedir que um sistema falhe quando ocorrem condições inesperadas.
-
-> [!NOTE]
-> Verifique se a qualidade do código é alta antes de começar a trabalhar na confiabilidade do código. A refatoração de código, juntamente com padrões e diretrizes, pode ajudar a garantir um código de alta qualidade.
-
-Há outros fatores que afetam a confiabilidade do código. Alguns desses fatores não são de responsabilidade do desenvolvedor, enquanto outros devem ser considerados antes ou depois da confiabilidade do código. Esses outros fatores incluem:
-
-- Práticas de desenvolvimento: Seguir as melhores práticas no desenvolvimento do software, como revisões de código, programação em par e aderir aos padrões de codificação, pode levar a um código mais confiável.
-- Metas e métricas de confiabilidade: Definir metas claras de confiabilidade e ter métricas para medi-las pode orientar o processo de desenvolvimento para criar um software mais confiável.
-- Documentação: Uma documentação abrangente pode ajudar a entender o sistema e seus componentes, o que é essencial para manter e solucionar problemas do sistema.
-- Dependências: Bibliotecas e serviços externos dos quais o código depende podem afetar sua confiabilidade. Se um serviço de terceiros falhar, isso também poderá fazer com que o sistema dependente falhe.
-- Desempenho: Problemas de desempenho também podem afetar a confiabilidade. Garantir que o sistema tenha um bom desempenho sob cargas diferentes é importante.
-- Monitoramento e solução de problemas: O monitoramento contínuo e um guia de solução de problemas confiável podem ajudar a manter a confiabilidade de um serviço identificando e resolvendo problemas rapidamente.
-- Design e arquitetura: Um sistema bem projetado com uma arquitetura sólida pode lidar com erros normalmente e manter a funcionalidade mesmo quando alguns componentes falham.
-- Fatores externos: Problemas de confiabilidade pós-lançamento podem surgir devido a fatores externos, como atualizações de hardware e do sistema operacional, que podem introduzir problemas de compatibilidade ou falhas no sistema.
-
-Melhorar a confiabilidade do código pode ajudá-lo a reduzir a probabilidade de bugs, erros e comportamentos inesperados.
-
-##### Examinar o desempenho do código
-
-O desempenho do código refere-se à eficiência com que um programa ou aplicativo é executado, especialmente em termos de velocidade, uso de memória e consumo geral de recursos. Para garantir ou melhorar o desempenho do código, os desenvolvedores podem executar várias ações:
-
-Os desenvolvedores devem considerar os seguintes fatores ao trabalhar em melhorias no desempenho de código:
-
-- Otimizar algoritmos: Escolha os algoritmos e estruturas de dados mais eficientes para a tarefa em questão. Mesmo pequenas melhorias podem ter um impacto significativo no desempenho.
-- Evitar cálculos desnecessários: Armazene em cache os resultados de operações dispendiosas quando possível e evite cálculos redundantes.
-- Usar programação multithreading e assíncrona: Aproveite as arquiteturas modernas da CPU paralelizando tarefas e executando operações de E/S de forma assíncrona.
-- Minimizar as operações de E/S: As operações de E/S do disco e da rede podem estar lentas, portanto, é importante minimizar essas operações ou executá-las de forma assíncrona para evitar o bloqueio do thread de execução principal.
+- Potential issues: Identifying potential issues in the code can help prevent bugs and errors from occurring. Identifying potential issues should include reviewing the code for common pitfalls and addressing them proactively.
+- Testing: Adequate testing is crucial to identify and fix bugs before the product is released. Adequate testing should include unit testing, integration testing, system testing, and acceptance testing.
+- Exception handling: Proper exception handling mechanisms can prevent a system from failing when unexpected conditions occur.
 
 > [!NOTE]
-> Verifique se a qualidade do código é alta antes de começar a trabalhar no desempenho do código. A refatoração de código, juntamente com padrões e diretrizes, pode ajudar a garantir um código de alta qualidade.
+> Ensure that your code quality is high before your start working on code reliability. Code refactoring, along with standards and guidelines, can help ensure high-quality code.
 
-Há outros fatores que afetam o desempenho do código. Alguns desses fatores não são de responsabilidade do desenvolvedor, enquanto outros devem ser considerados antes ou depois de trabalhar no desempenho do código. Esses outros fatores incluem:
+There are other factors that affect code reliability. Some of theses factors aren't developer responsibilities, while others should be considered before or after code reliability. These other factors include:
 
-- Perfil e parâmetro de comparação: Use ferramentas de criação de perfil para identificar gargalos de desempenho. Avaliar o desempenho antes e depois de fazer alterações pode quantificar o impacto das otimizações.
-- Gerenciar a memória com eficiência: Use ferramentas de criação de perfil de memória para detectar vazamentos e garantir que a memória esteja sendo alocada e desalocada corretamente.
-- Otimizar interações de banco de dados: Use consultas eficientes, indexação adequada e cache de banco de dados para minimizar a sobrecarga do desempenho das interações de banco de dados.
-- Revisões de código: Examine regularmente o código para identificar problemas de desempenho. As revisões em pares podem ajudar a detectar ineficiências que o desenvolvedor original pode ter perdido.
-- Manter-se atualizado: Use as versões mais recentes de linguagens, bibliotecas e estruturas, pois elas geralmente incluem melhorias de desempenho.
-- Educar e colaborar: Mantenha-se informado sobre as melhores práticas para otimização de desempenho e colabore com outros desenvolvedores para aprender com suas experiências.
+- Development practices: Following best practices in software development, such as code reviews, pair programming, and adhering to coding standards, can lead to more reliable code.
+- Reliability goals and metrics: Setting clear reliability goals and having metrics to measure them can guide the development process towards creating more reliable software.
+- Documentation: Comprehensive documentation can aid in understanding the system and its components, which is essential for maintaining and troubleshooting the system.
+- Dependencies: External libraries and services that the code depends on can affect its reliability. If a third-party service fails, it can cause the dependent system to fail as well.
+- Performance: Performance issues can also affect reliability. Ensuring that the system performs well under different loads is important.
+- Monitoring and troubleshooting: Continuous monitoring and a reliable troubleshooting guide can help maintain the reliability of a service by quickly identifying and addressing issues.
+- Design and architecture: A well-designed system with a solid architecture can handle errors gracefully and maintain functionality even when some components fail.
+- External factors: Post-release reliability issues can arise due to external factors such as hardware and operating system updates, which may introduce compatibility issues or system failures.
 
-Quando os desenvolvedores se concentram nessas áreas, eles podem melhorar significativamente o desempenho de seu código, levando a aplicativos mais rápidos e responsivos. A otimização de desempenho é um processo contínuo e é importante monitorar e melhorar continuamente o desempenho de seus aplicativos.
+Improving the reliability of your code can help you to reduce the likelihood of bugs, errors, and unexpected behaviors.
 
-O GitHub Copilot Chat pode ajudá-lo a melhorar o desempenho do código fornecendo sugestões para otimizar algoritmos, reduzir cálculos desnecessários, usar programação multithreading e assíncrona e minimizar as operações de E/S.
+##### Examine code performance
 
-### Desenvolver solicitações para o GitHub Copilot Chat
+Code performance refers to how efficiently a program or application runs, particularly in terms of speed, memory usage, and overall resource consumption. To ensure or improve code performance, developers can take several actions:
 
-As solicitações que você escreve para o GitHub Copilot Chat devem fornecer um contexto e uma intenção claramente definidos. Considere as seguintes sugestões ao desenvolver suas solicitações:
+Developers should consider the following factors when working on code performance improvements:
 
-- Defina um contexto externo com escopo em um nível mais alto do que o código que você deseja atualizar. Por exemplo, se você quiser melhorar um método, especifique a classe ou o arquivo que inclui o método como o contexto externo. Identifique o método como um contexto interno.
-- Use participantes de chat e variáveis de chat para ajudar a especificar o contexto. Você pode usar as variáveis de chat `#file:` e `#selection` para identificar o código específico no qual você está focado. Você também pode incluir o workspace completo (`@workspace`) quando apropriado. Consulte a seleção de arquivo ou código na parte de linguagem natural da sua solicitação.
-- A intenção deve ser clara, concisa e específica. Sua solicitação deve especificar o tipo de melhoria que você deseja obter.
-
-Durante essa parte da demonstração, você revisa o **projeto APL2007M5BankAccount-Reliability** e cria três prompts para o GitHub Copilot Chat. As solicitações se concentram em melhorar a confiabilidade e o desempenho do código.
-
-Use as seguintes etapas para concluir esta parte da demonstração:
-
-1. Abra o aplicativo de exemplo **APL2007M5BankAccount-Reliability** no Visual Studio Code.
-
-1. Abra a exibição do Gerenciador de Soluções.
-
-1. Expanda o projeto **BankAccount** e examine os arquivos de código **BankAccount.cs** e **Program.cs**.
-
-    O arquivo **BankAccount.cs** contém o código da classe `BankAccount`, que representa uma conta bancária com propriedades como AccountNumber, Balance, AccountHolderName, AccountType e DateOpened. Ele contém os seguintes métodos:
-
-    - Credit(valor duplo): Esse método aumenta o saldo da conta pelo valor especificado.
-    - Debit(valor duplo): Esse método diminui o saldo da conta pelo valor especificado. Se o saldo for menor que o valor, ele gerará uma exceção com a mensagem "Saldo insuficiente para débito".
-    - GetBalance(): Esse método retorna o saldo atual da conta.
-    - Transfer(BankAccount toAccount, valor duplo): Esse método transfere um valor especificado da conta atual para o toAccount. Se o saldo for inferior ao valor, uma exceção é lançada com a mensagem "Saldo insuficiente para transferência." Se AccountHolderName for diferente e o valor for maior que 500, uma exceção é lançada com a mensagem "O valor da transferência excede o limite máximo para proprietários de contas diferentes."
-    - PrintStatement(): Esse método imprime o AccountNumber e o saldo da conta no console.
-    - CalculateInterest(interestRate duplo): Esse método calcula os juros no saldo atual da conta usando a interestRate especificada.
-
-    O arquivo **Program.cs** contém um aplicativo de console que simula um sistema bancário. Ele inclui os seguintes itens:
-
-    - Método Main: O ponto de entrada do aplicativo. Ele cria uma lista de contas bancárias e simula transações e transferências nessas contas.
-    - Método CreateBankAccounts: Esse método cria um número especificado de contas bancárias com saldos iniciais aleatórios, nomes de titulares de conta, tipos de conta e datas de abertura. Ele usa um bloco try-catch para lidar com quaisquer exceções que possam ocorrer durante a criação da conta.
-    - Método SimulateTransactions: Esse método simula um número especificado de transações em cada conta na lista fornecida. Cada transação é um valor aleatório em dólar e pode ser um crédito (depósito) ou um débito (retirada), dependendo se o valor é positivo ou negativo.
-    - Método SimulateTransfers: Esse método é idêntico ao SimulateTransactions. Parece que se destina a simular transferências entre contas, mas, no momento, está apenas duplicando a funcionalidade do método SimulateTransactions.
-    - Método GenerateRandomDollarAmount: Esse método gera um valor de dólar aleatório dentro de um intervalo especificado. O intervalo e o método de cálculo diferem dependendo se o valor é para um saldo de conta ou uma transação
-    - Método GenerateRandomAccountHolder: Esse método seleciona um nome de titular de conta aleatório em uma lista predefinida.
-    - Método GenerateRandomAccountType: Esse método seleciona um tipo de conta aleatória em uma lista predefinida.
-    - Método GenerateRandomDateOpened: Esse método gera uma data aleatória dentro de um intervalo especificado para a data de abertura da conta.
-
-1. Reserve um minuto para descrever os prompts que podem ajudá-lo a melhorar a confiabilidade e o desempenho do código.
-
-    Desenvolva solicitações para a classe BankAccount e a classe Program. Considere os seguintes fatores de confiabilidade e desempenho ao desenvolver suas solicitações:
-
-    - Possíveis problemas: Identificar possíveis problemas no código pode ajudar a impedir que bugs e erros ocorram. Isso inclui revisar o código para detectar armadilhas comuns e endereçá-las proativamente.
-    - Testes: Testes adequados são cruciais para identificar e corrigir bugs antes que o produto seja lançado. Isso inclui teste de unidade, teste de integração, teste de sistema e teste de aceitação.
-    - Tratamento de exceções: Mecanismos adequados de tratamento de exceção podem impedir que um sistema falhe quando ocorrem condições inesperadas.
-
-    - Otimizar algoritmos: Escolha os algoritmos e estruturas de dados mais eficientes para a tarefa em questão. Mesmo pequenas melhorias podem ter um impacto significativo no desempenho.
-    - Evitar Cálculos Desnecessários: Armazene em cache os resultados de operações dispendiosas quando possível e evite cálculos redundantes.
-    - Usar Programação Multithreading e Assíncrona: Aproveite as arquiteturas modernas da CPU paralelizando tarefas e executando operações de E/S de forma assíncrona.
-    - Minimizar Operações de E/S: As operações de E/S do disco e da rede podem estar lentas, portanto, é importante minimizar essas operações ou executá-las de forma assíncrona para evitar o bloqueio do thread de execução principal.
-
-    Para este projeto, você pode usar as seguintes solicitações para gerar sugestões para melhorar a confiabilidade do código:
-
-    Prompt: `@workspace /explain How can I improve exception handling the [selected code]?` (anexar BankAccount.cs ao Contexto de Chat)
-
-    Prompt: `@workspace /explain How can I reduce unexpected issues for the [selected code]?` (anexar BankAccount.cs ao Contexto de Chat)
-
-    Prompt: `@workspace /explain How can I improve unit test support for the [selected code]?` (anexar BankAccount.cs ao Contexto de Chat)
-
-    Prompt: `@workspace /explain How can I avoid future bugs or issues in the [selected code]?` (anexar Program.cs ao Contexto de Chat)
-
-    Prompt: `@workspace /explain How can I improve exception handling for the [selected code]?` (anexar Program.cs ao Contexto de Chat)
-
-    Prompt: `@workspace /explain How can I improve the efficiency of algorithms or data structures for the [selected code]?` (anexar Program.cs ao Contexto de Chat)
-
-    Prompt: `@workspace /explain How can I improve performance with asynchronous tasks or methods in the [selected code]?` (anexar Program.cs ao Contexto de Chat)
-
-    Prompt: `@workspace /explain How can I improve unit test support for the [selected code]?` (anexar BankAccountTests.cs e BankAccount.cs ao Contexto de Chat)
-
-1. Selecione dois prompts que você pode usar para melhorar a classe BankAccount durante esta demonstração.
-
-    Para a classe BankAccount, tente selecionar solicitações que se concentram na confiabilidade.
-
-1. Selecione dois prompts que você pode usar para melhorar a classe Program durante esta demonstração.
-
-    Para a classe Program, tente selecionar uma solicitação que se concentre na confiabilidade e uma que se concentre no desempenho.
-
-### Melhorar a confiabilidade do código da classe BankAccount usando o GitHub Copilot Chat
-
-Garantir a confiabilidade do código de produção é essencial para qualquer projeto de software. O aplicativo de exemplo APL2007M5BankAccount-Reliability usa a classe Program para simular o cenário bancário, mas é a classe BankAccount que é implantada em um ambiente de produção. Melhorar a confiabilidade da classe BankAccount ajuda a garantir que ela seja executada conforme o esperado e atenda aos requisitos do usuário.
-
-O GitHub Copilot Chat pode ser usado para ajudar a melhorar a confiabilidade do código. Suas solicitações podem direcionar o GitHub Copilot para gerar sugestões que melhorem o tratamento de exceções, reduzam problemas inesperados e melhoram o suporte ao teste de unidade. Você também pode criar solicitações de escopo amplo que solicitem sugestões gerais para melhorar a confiabilidade do código. Uma combinação de solicitações específicas e gerais pode ajudá-lo a identificar áreas que precisam de melhoria e implementar as alterações necessárias.
+- Optimize algorithms: Choose the most efficient algorithms and data structures for the task at hand. Even small improvements can have a significant impact on performance.
+- Avoid unnecessary computations: Cache results of expensive operations when possible, and avoid redundant calculations.
+- Use multithreading and asynchronous programming: Take advantage of modern CPU architectures by parallelizing tasks and performing I/O operations asynchronously.
+- Minimize I/O operations: Disk and network I/O can be slow, so it’s important to minimize these operations or perform them asynchronously to avoid blocking the main execution thread.
 
 > [!NOTE]
-> Implementar e testar as atualizações sugeridas leva tempo, e o tempo pode ser um fator durante esta demonstração. Selecionar solicitações que se concentram em áreas específicas de melhoria pode ajudá-lo a gerenciar seu tempo. Solicitações muito amplas podem gerar um grande número de sugestões ou sugestões complexas que são difíceis de avaliar e implementar em um curto período de tempo. Depois de começar, você poderá atualizar suas solicitações com detalhes mais específicos se descobrir que as atualizações sugeridas têm escopo muito amplo ou muito complexo.
+> Ensure that your code quality is high before your start working on code performance. Code refactoring, along with standards and guidelines, can help ensure high-quality code.
 
-Use as seguintes etapas para concluir esta parte da demonstração:
+There are other factors that affect code performance. Some of theses factors aren't developer responsibilities, while others should be considered before or after working on code performance. These other factors include:
 
-1. Verifique se o projeto é compilado e executado sem erros.
+- Profile and benchmark: Use profiling tools to identify performance bottlenecks. Benchmarking before and after making changes can quantify the impact of optimizations.
+- Manage memory efficiently: Use memory profiling tools to detect leaks and ensure that memory is being allocated and deallocated properly.
+- Optimize database interactions: Use efficient queries, proper indexing, and database caching to minimize the performance overhead of database interactions.
+- Code reviews: Regularly review code for performance issues. Peer reviews can help catch inefficiencies that the original developer might have missed.
+- Stay updated: Use the latest versions of languages, libraries, and frameworks, as they often include performance improvements.
+- Educate and collaborate: Stay informed about best practices for performance optimization and collaborate with other developers to learn from their experiences.
 
-    Os avisos são aceitáveis desde que o aplicativo seja executado, mas os erros devem ser resolvidos antes de você começar a trabalhar com o Chat do GitHub Copilot.
+When developers focus on these areas, they can significantly improve the performance of their code, leading to faster, more responsive applications. Performance optimization is an ongoing process, and it’s important to continuously monitor and improve the performance of your applications.
 
-1. Abra o arquivo BankAccount.cs no Visual Studio Code e selecione todo o código no arquivo.
+GitHub Copilot Chat can help you improve the performance of your code by providing suggestions for optimizing algorithms, reducing unnecessary computations, using multithreading and asynchronous programming, and minimizing I/O operations.
 
-1. Abra o modo de exibição de chat.
+### Develop prompts for GitHub Copilot Chat
 
-1. No modo de exibição de Chat, adicione os arquivos relevantes ao contexto do chat e, em seguida, insira seu prompt.
+The prompts you write for GitHub Copilot Chat should provide a clearly defined context and intent. Consider the following suggestions when developing your prompts:
 
-1. Examinar as sugestões fornecidas pelo Chat do GitHub Copilot.
+- Define an outer context that's scoped at a higher level than the code you want to update. For example, if you want to improve a method, specify the class or file that includes the method as the outer context. Identify the method as an inner context.
+- Use chat participants and chat variables to help specify context. You can use the `#file:` and `#selection` chat variables to identify the specific code you are focused on. You can also include the full workspace (`@workspace`) when appropriate. Refer to the file or code selection in the natural language portion of your prompt.
+- The intent should be clear, concise, and specific. Your prompt should specify the type of improvement you want to achieve.
 
-    Por exemplo, suponha que você conclua as seguintes ações:
+During this portion of the demo, you review the **APL2007M5BankAccount-Reliability** project and create three prompts for GitHub Copilot Chat. The prompts focus on improving code reliability and performance.
 
-    - Abra o arquivo BankAccount.cs e selecione todo o código.
-    - Escolha o seguinte prompt: `@workspace /explain How can I improve exception handling in the BankAccount.cs file?`
-    - Abra o modo de exibição chat e anexe os arquivos BankAccount.cs e Program.cs ao contexto do Chat.
-    - Insira o prompt no modo de exibição chat.
+Use the following steps to complete this portion of the demo:
 
-    Nesse caso, o Chat do GitHub Copilot sugere atualizações semelhantes à seguinte resposta:
+1. Open the **APL2007M5BankAccount-Reliability** sample app in Visual Studio Code.
 
-    *Para melhorar o tratamento de exceções no arquivo BankAccount.cs, considere as seguintes sugestões: *
+1. Open the Solution Explorer view.
 
-    *1. **Use exceções específicas**: Em vez de lançar a classe `Exception` base, use exceções mais específicas. Isso facilita para o código que chama compreender e tratar tipos específicos de erros. Por exemplo, você poderia lançar uma InvalidOperationException ao tentar debitar ou transferir com fundos insuficientes.*
+1. Expand the **BankAccount** project, and then review the **BankAccount.cs** and **Program.cs** code files.
 
-    *2. **Inclua mais informações nas mensagens de exceção**: As mensagens de exceção podem fornecer mais detalhes sobre a operação que falhou. Por exemplo, no método `Debit`, a mensagem de exceção pode incluir o valor da tentativa de débito e o saldo atual.*
+    The **BankAccount.cs** file contains the code for the `BankAccount` class, which represents a bank account with properties such as AccountNumber, Balance, AccountHolderName, AccountType, and DateOpened. It contains the following methods:
 
-    *3. **Considere criar exceções personalizadas**: Se houver condições de erro específicas que sejam exclusivas do seu aplicativo, talvez você queira criar classes de exceção personalizadas. Criar exceções personalizadas permite encapsular mais informações sobre a condição de erro e torna seu código mais autoexplicativo.*
+    - Credit(double amount): This method increases the Balance of the account by the specified amount.
+    - Debit(double amount): This method decreases the Balance of the account by the specified amount. If the Balance is less than the amount, it throws an Exception with the message "Insufficient balance for debit."
+    - GetBalance(): This method returns the current Balance of the account.
+    - Transfer(BankAccount toAccount, double amount): This method transfers a specified amount from the current account to the toAccount. If the Balance is less than the amount, it throws an Exception with the message "Insufficient balance for transfer." If the AccountHolderName is different and the amount is more than 500, it throws an Exception with the message "Transfer amount exceeds maximum limit for different account owners."
+    - PrintStatement(): This method prints the AccountNumber and Balance to the console.
+    - CalculateInterest(double interestRate): This method calculates the interest on the current Balance using the specified interestRate.
 
-    *Veja como você pode melhorar o método `Debit` com estas sugestões:*
+    The **Program.cs** file contains a console application that simulates a banking system. It includes the following methods:
+
+    - Main Method: The entry point of the application. It creates a list of bank accounts and simulates transactions and transfers on these accounts.
+    - CreateBankAccounts Method: This method creates a specified number of bank accounts with random initial balances, account holder names, account types, and opening dates. It uses a try-catch block to handle any exceptions that might occur during account creation.
+    - SimulateTransactions Method: This method simulates a specified number of transactions on each account in the provided list. Each transaction is a random dollar amount, and can be either a credit (deposit) or a debit (withdrawal), depending on whether the amount is positive or negative.
+    - SimulateTransfers Method: This method is identical to SimulateTransactions. It seems like it's intended to simulate transfers between accounts, but currently, it's just duplicating the functionality of SimulateTransactions.
+    - GenerateRandomDollarAmount Method: This method generates a random dollar amount within a specified range. The range and calculation method differ depending on whether the amount is for an account balance or a transaction
+    - GenerateRandomAccountHolder Method: This method selects a random account holder name from a predefined list.
+    - GenerateRandomAccountType Method: This method selects a random account type from a predefined list.
+    - GenerateRandomDateOpened Method: This method generates a random date within a specified range for the account opening date.
+
+1. Take a minute to describe the prompts that could help you to improve code reliability and performance.
+
+    Develop prompts for both the BankAccount class and the Program class. Consider the following reliability and performance factors when developing your prompts:
+
+    - Potential issues: Identifying potential issues in the code can help prevent bugs and errors from occurring. This includes reviewing the code for common pitfalls and addressing them proactively.
+    - Testing: Adequate testing is crucial to identify and fix bugs before the product is released. This includes unit testing, integration testing, system testing, and acceptance testing.
+    - Exception handling: Proper exception handling mechanisms can prevent a system from failing when unexpected conditions occur.
+
+    - Optimize Algorithms: Choose the most efficient algorithms and data structures for the task at hand. Even small improvements can have a significant impact on performance.
+    - Avoid Unnecessary Computations: Cache results of expensive operations when possible, and avoid redundant calculations.
+    - Use Multithreading and Asynchronous Programming: Take advantage of modern CPU architectures by parallelizing tasks and performing I/O operations asynchronously.
+    - Minimize I/O Operations: Disk and network I/O can be slow, so it’s important to minimize these operations or perform them asynchronously to avoid blocking the main execution thread.
+
+    For this project, you can use the following prompts to generate suggestions for improving the reliability of your code:
+
+    Prompt: `@workspace /explain How can I improve exception handling the [selected code]?` (attach BankAccount.cs to the Chat context)
+
+    Prompt: `@workspace /explain How can I reduce unexpected issues for the [selected code]?` (attach BankAccount.cs to the Chat context)
+
+    Prompt: `@workspace /explain How can I improve unit test support for the [selected code]?` (attach BankAccount.cs to the Chat context)
+
+    Prompt: `@workspace /explain How can I avoid future bugs or issues in the [selected code]?` (attach Program.cs to the Chat context)
+
+    Prompt: `@workspace /explain How can I improve exception handling for the [selected code]?` (attach Program.cs to the Chat context)
+
+    Prompt: `@workspace /explain How can I improve the efficiency of algorithms or data structures for the [selected code]?` (attach Program.cs to the Chat context)
+
+    Prompt: `@workspace /explain How can I improve performance with asynchronous tasks or methods in the [selected code]?` (attach Program.cs to the Chat context)
+
+    Prompt: `@workspace /explain How can I improve unit test support for the [selected code]?` (attach BankAccountTests.cs and BankAccount.cs to the Chat context)
+
+1. Select two prompts that you can use to improve the BankAccount class during this demo.
+
+    For the BankAccount class, try to select prompts that focus on reliability.
+
+1. Select two prompts that you can use to improve the Program class during this demo.
+
+    For the Program class, try to select one prompt that focuses on reliability and one that focuses on performance.
+
+### Improve code reliability of the BankAccount class using GitHub Copilot Chat
+
+Ensuring the reliability of production code is essential for any software project. The APL2007M5BankAccount-Reliability sample app uses the Program class to simulate the banking scenario, but it's the BankAccount class that's deployed to a production environment. Improving the reliability of the BankAccount class helps to ensure that it performs as expected and meets user requirements.
+
+GitHub Copilot Chat can be used to help improve the reliability of your code. Your prompts can direct GitHub Copilot to generate suggestions that improve exception handling, reduce unexpected issues, and improve unit test support. You can also create broadly scoped prompts that ask for general suggestions to improve the reliability of the code. A combination of specific and general prompts can help you to identify areas that need improvement and implement the necessary changes.
+
+> [!NOTE]
+> Implementing and testing suggested updates takes time, and time may be a factor during this demo. Selecting prompts that focus on specific areas of improvement can help you to manage your time. Prompts that are too broad may generate a large number of suggestions or complex suggestions that are difficult to evaluate and implement in a short amount of time. Once you begin, you can update your prompts with more specific details if you find that the suggested updates are too broadly scoped or too complex.
+
+Use the following steps to complete this portion of the demo:
+
+1. Ensure that the project builds and runs without errors.
+
+    Warnings are acceptable as long as the application runs, but unhandled errors that cause the application to crash must be resolved before you start working with GitHub Copilot Chat.
+
+1. Open the BankAccount.cs file in Visual Studio Code, and then select all of the code in the file.
+
+1. Open the Chat view.
+
+1. In the Chat view, add relevant files to the Chat context, and then enter your prompt.
+
+1. Review the suggestions provided by GitHub Copilot Chat.
+
+    For example, suppose you complete the following actions:
+
+    - You open the BankAccount.cs file and select all of the code.
+    - You choose the following prompt: `@workspace /explain How can I improve exception handling in the BankAccount.cs file?`
+    - You open the Chat view and attach the BankAccount.cs and Program.cs files to the Chat context.
+    - You enter the prompt in the Chat view.
+
+    GitHub Copilot Chat suggests updates that are similar to the following response:
+
+    *To improve exception handling in the BankAccount.cs file, consider the following suggestions:*
+
+    *1. **Use Specific Exceptions**: Instead of throwing the base `Exception` class, use more specific exceptions. This makes it easier for the calling code to understand and handle specific types of errors. For example, you could throw an InvalidOperationException when trying to debit or transfer with insufficient funds.*
+
+    *2. **Include More Information in Exception Messages**: The exception messages could provide more details about the operation that failed. For example, in the `Debit` method, the exception message could include the attempted debit amount and the current balance.*
+
+    *3. **Consider Custom Exceptions**: If there are specific error conditions that are unique to your application, you might want to create custom exception classes. Creating custom exceptions allows you to encapsulate more information about the error condition and makes your code more self-documenting.*
+
+    *Here's how you could improve the `Debit` method with these suggestions:*
 
     ```csharp
 
@@ -226,7 +226,7 @@ Use as seguintes etapas para concluir esta parte da demonstração:
 
     ```
 
-    *E aqui está um exemplo de uma classe de exceção personalizada:*
+    *And here's an example of a custom exception class:*
 
     ```csharp
 
@@ -244,7 +244,7 @@ Use as seguintes etapas para concluir esta parte da demonstração:
 
     ```
 
-    *Em seguida, você pode lançar essa exceção personalizada no método Debit:*
+    *You could then throw this custom exception in the Debit method:*
 
     ```csharp
 
@@ -262,28 +262,28 @@ Use as seguintes etapas para concluir esta parte da demonstração:
 
     ```
 
-    *Dessa forma, o código de chamada pode capturar InsufficientFundsException e ter acesso às propriedades AttemptedAmount e CurrentBalance para lidar com a condição de erro com mais eficiência.*
+    *This way, the calling code can catch InsufficientFundsException and have access to the AttemptedAmount and CurrentBalance properties to handle the error condition more effectively.*
 
-1. Implemente as atualizações sugeridas que ajudam a melhorar a confiabilidade do código para sua classe `BankAccount`.
+1. Implement the suggested updates that help to improve code reliability for your `BankAccount` class.
 
-1. Para garantir que nenhum erro tenha sido introduzido pelas alterações, crie e execute sua solução antes de continuar.
+1. To ensure that no errors were introduced by the changes, build and run your solution before continuing.
 
     > [!TIP]
-    > No exemplo acima, o modo de exibição de chat forneceu snippets de código que implementam um exemplo da atualização sugerida (usando exceções específicas, incluindo mais informações na mensagem de exceção e criando exceções personalizadas). Depois de implementar as sugestões, tente usar preenchimentos de linha de código para gerar um novo código que duplica a atualização. No caso deste exemplo, os preenchimentos de linha de código podem ser usadas para criar classes de exceção mais personalizadas. Em seguida, você pode usar preenchimentos de linha de código para atualizar os outros métodos com as novas exceções personalizadas. Você também pode executar novamente a solicitação original para ver outras sugestões.
+    > In the example above, the Chat view provided code snippets that implement one example of the suggested update (using specific exceptions, including more information in the exception message, and creating custom exceptions). After you implement suggestions, try using code line completions to generate new code that duplicates the update. In the case of this example, code line completions can be used to create more custom exception classes. You can then use code line completions to update the other methods with the new custom exceptions. You can also rerun the original prompt to see other suggestions.
 
-1. Selecione todo o códiogo no arquivo BankAccount.cs.
+1. Select all of the code in the BankAccount.cs file.
 
-1. Abra o modo de exibição de chat.
+1. Open the Chat view.
 
-1. No modo de exibição chat, use o botão **Anexar Contexto** para adicionar arquivos relevantes ao contexto de Chat e, em seguida, insira seu prompt.
+1. Use the **Attach Context** button to add relevant files to the Chat context, and then enter your second "reliability" prompt.
 
-1. Examine as sugestões fornecidas pelo GitHub Copilot Chat.
+1. Review the suggestions provided by GitHub Copilot Chat.
 
-    Por exemplo, se você inserir `@workspace /explain How can I reduce unexpected issues for the selected code?` no modo de exibição de chat, o GitHub Copilot Chat sugerirá atualizações semelhantes à seguinte resposta:
+    For example, if you enter `@workspace /explain How can I reduce unexpected issues for the selected code?` in the Chat view, GitHub Copilot Chat suggests updates that are similar to the following response:
 
-    *Para reduzir problemas inesperados na classe BankAccount, você pode implementar as seguintes melhorias:*
+    *To reduce unexpected issues in the BankAccount class, you can implement the following improvements:*
 
-    *1. Use enumeração para tipo de conta: Em vez de usar uma cadeia de caracteres para o tipo de conta e verificar se ela é "Poupança" ou "Corrente", considere usar uma enumeração. Isso evitaria possíveis problemas com comparação de cadeia de caracteres (como sensibilidade a maiúsculas e minúsculas) e limitaria o tipo de conta a valores predefinidos.*
+    *1. Use Enum for Account Type: Instead of using a string for the account type and checking if it's "Savings" or "Current", consider using an enum. This would prevent potential issues with string comparison (like case sensitivity) and limit the account type to predefined values.*
 
     ```csharp
 
@@ -295,53 +295,53 @@ Use as seguintes etapas para concluir esta parte da demonstração:
 
     ```
 
-    *2. Usar decimal para valores monetários: Geralmente, é recomendável usar o tipo decimal em vez de dobrar para valores monetários para evitar erros de arredondamento.*
+    *2. Use Decimal for Monetary Values: It's generally recommended to use the decimal type instead of double for monetary values to avoid rounding errors.*
 
-    *3. Adicione mais validações: Você pode adicionar mais validações em seus métodos. Por exemplo, no método Transfer, você poderia verificar se o toAccount não é nulo antes de prosseguir com a transferência.*
+    *3. Add More Validations: You could add more validations in your methods. For example, in the Transfer method, you could check if the toAccount is not null before proceeding with the transfer.*
 
-    *4. Use constantes para números mágicos: No método Transfer, há um número mágico 500. Seria melhor defini-lo como uma constante com um nome significativo no início da sua classe.*
+    *4. Use Constants for Magic Numbers: In your Transfer method, there's a magic number 500. It would be better to define it as a constant with a meaningful name at the top of your class.*
 
     ```csharp
     private const double MaxTransferAmountForDifferentOwners = 500;
     ```
 
-    *5. Exceção personalizada para o limite de transferência: Em vez de gerar uma exceção geral quando o valor da transferência exceder o limite para diferentes proprietários de conta, considere criar uma exceção personalizada como ExceededTransferLimitException.*
+    *5. Custom Exception for Transfer Limit: Instead of throwing a general Exception when the transfer amount exceeds the limit for different account owners, consider creating a custom exception like ExceededTransferLimitException.*
 
-    *6. Registre em log: Considere adicionar o registro em log ao seu aplicativo. Isso pode ajudá-lo a entender o fluxo do aplicativo e diagnosticar problemas.*
+    *6. Logging: Consider adding logging to your application. This can help you understand the flow of your application and diagnose issues.*
 
-    *7. Testes de unidade: Escreva testes de unidade para seus métodos para garantir que eles se comportem conforme o esperado em vários cenários. Isso pode ajudar a detectar problemas no início do processo de desenvolvimento.*
+    *7. Unit Tests: Write unit tests for your methods to ensure they behave as expected in various scenarios. This can help catch issues early in the development process.*
 
-1. Considere o escopo e a amplitude das sugestões fornecidas pelo GitHub Copilot Chat.
+1. Consider the scope and breadth of the suggestions provided by GitHub Copilot Chat.
 
-    Algumas solicitações podem gerar um grande número de sugestões que afetam um escopo amplo. Se isso acontecer, verifique se um único item de sugestão pode ser usado para definir uma nova solicitação que forneça uma intenção e/ou contexto mais específicos.
+    Some prompts may generate a large number of suggestions that affect a broad scope. If this happens, check to see if a single suggestion item can be used to define a new prompt that provides a more specific intent and/or context.
 
-1. Use a lista de sugestões para construir uma solicitação que inclua uma intenção e/ou contexto mais detalhados.
+1. Use the list of suggestions to construct a prompt that includes a more detailed intent and/or context.
 
-    Cada uma das sugestões fornecidas pelo GitHub Copilot Chat pode ser investigada e implementada separadamente. Começar na parte superior da lista e ir descendo pode ajudá-lo a se concentrar em uma melhoria de cada vez.
+    Each of the suggestions provided by GitHub Copilot Chat can be investigated and implemented separately. Starting at the top of the list and working your way down can help you to focus on one improvement at a time.
 
-1. Insira sua solicitação detalhada no modo de exibição de chat e examine as sugestões fornecidas pelo GitHub Copilot Chat.
+1. Enter your detailed prompt in the Chat view, and then review the suggestions provided by GitHub Copilot Chat.
 
-    Suponha que você tenha usado o segundo exemplo de solicitação de confiabilidade. A resposta do GitHub Copilot Chat inclui o seguinte item de sugestão:
+    Suppose you used the second reliability prompt example. GitHub Copilot Chat's response includes the following suggestion item:
 
-    *Adicione mais validações: Você pode adicionar mais validações em seus métodos. Por exemplo, no método Transfer, você poderia verificar se o toAccount não é nulo antes de prosseguir com a transferência.*
+    *Add More Validations: You could add more validations in your methods. For example, in the Transfer method, you could check if the toAccount is not null before proceeding with the transfer.*
 
-    Você pode usar essa sugestão para criar uma nova solicitação que se concentre em adicionar mais validações ao método Transfer. Você pode selecionar o método Transfer e, em seguida, inserir a seguinte solicitação no modo de exibição de chat:
+    You could use this suggestion to create a new prompt that focuses on adding more validations to the Transfer method. You could select the Transfer method and then enter the following prompt in the Chat view:
 
     `@workspace /explain #file:BankAccount.cs How can I improve method validations for the selected code?`
 
-    Nesse caso, o GitHub Copilot Chat sugere atualizações semelhantes à seguinte resposta:
+    In this case, GitHub Copilot Chat suggests updates that are similar to the following response:
 
-    *O código que você forneceu está bem estruturado e segue boas práticas para tratamento de exceções. No entanto, há algumas áreas em que você pode fazer melhorias:*
+    *The code you provided is well-structured and follows good practices for exception handling. However, there are a few areas where you could make improvements:*
 
-    *1. Consolide a lógica de validação: Você pode criar uma classe ou método de validação separado para lidar com toda a lógica de validação. Isso tornaria sua classe BankAccount mais limpa e mais focada em suas principais responsabilidades.*
+    *1. Consolidate Validation Logic: You could create a separate validation class or method to handle all the validation logic. This would make your BankAccount class cleaner and more focused on its main responsibilities.*
 
-    *2. Use atributos de validação personalizados: Para algumas das validações, você pode usar atributos de validação personalizados. Isso permitiria que você anotasse as propriedades que precisam de validação e mantivesse a lógica de validação separada da lógica de negócio.*
+    *2. Use Custom Validation Attributes: For some of the validation, you could use custom validation attributes. This would allow you to annotate the properties that need validation and keep the validation logic separate from the business logic.*
 
-    *3. Use a validação fluente: Fluent Validation é uma biblioteca .NET que usa uma interface fluente e expressões lambda para construir regras de validação. Isso pode tornar seu código de validação mais intuitivo e mais fácil de ler.*
+    *3. Use Fluent Validation: Fluent Validation is a .NET library that uses a fluent interface and lambda expressions for building validation rules. This can make your validation code more intuitive and easier to read.*
 
-    *4. Evite números mágicos: No método Transfer, você tem um valor codificado de 500. Geralmente, é uma boa prática evitar "números mágicos" e defini-los como constantes com nomes significativos no início da sua classe.*
+    *4. Avoid Magic Numbers: In your Transfer method, you have a hardcoded value of 500. It's generally a good practice to avoid "magic numbers" and instead define them as constants with meaningful names at the top of your class.*
 
-    Aqui está um exemplo de como você pode implementar algumas dessas sugestões:
+    Here's an example of how you might implement some of these suggestions:
 
     ```csharp
 
@@ -382,29 +382,29 @@ Use as seguintes etapas para concluir esta parte da demonstração:
 
     ```
 
-    Você pode continuar trabalhando nas sugestões fornecidas pelo GitHub Copilot Chat até implementar todas as melhorias que você considera necessárias.
+    You can continue working through the suggestions provided by GitHub Copilot Chat until you implement all of the improvements that you think are necessary.
 
-1. Implemente as atualizações sugeridas e, em seguida, crie e execute sua solução antes de continuar.
+1. Implement the suggested updates, and then build and run your solution before continuing.
 
-    Corrija os erros introduzidos pelas alterações antes de continuar.
+    Fix any errors that are introduced by the changes before you continue.
 
-### Melhorar a confiabilidade do código e o desempenho da classe Program usando o GitHub Copilot Chat
+### Improve code reliability and performance of the Program class using GitHub Copilot Chat
 
-1. Abra o arquivo Program.cs no Visual Studio Code e selecione todo o código no arquivo.
+1. Open the Program.cs file in Visual Studio Code, and then select all of the code in the file.
 
-1. Abra o arquivo Program.cs no Visual Studio Code e selecione todo o código no arquivo.
+1. Open the Program.cs file in Visual Studio Code, and then select all of the code in the file.
 
-1. Abra o modo de exibição de chat.
+1. Open the Chat view.
 
-1. No modo de exibição chat, use o botão **Anexar Contexto** para adicionar arquivos relevantes ao contexto de Chat e, em seguida, insira seu prompt.
+1. In the Chat view, use the **Attach Context** button to add relevant files to the Chat context, and then enter your prompt.
 
-1. Examine as sugestões fornecidas pelo GitHub Copilot Chat.
+1. Review the suggestions provided by GitHub Copilot Chat.
 
-    Por exemplo, se você inserir `@workspace /explain How can I improve performance with asynchronous tasks or methods in the Program.cs file?` no modo de exibição de chat, o GitHub Copilot Chat sugerirá atualizações semelhantes à seguinte resposta:
+    For example, if you enter `@workspace /explain How can I improve performance with asynchronous tasks or methods in the Program.cs file?` in the Chat view, GitHub Copilot Chat suggests updates that are similar to the following response:
 
-    *Para melhorar o desempenho com tarefas ou métodos assíncronos no arquivo Program.cs, você pode usar programação assíncrona com as palavras-chave async e await. Isso permitirá que o programa execute operações de E/S sem bloquear o thread principal, tornando-o mais responsivo e eficiente.*
+    *To improve performance with asynchronous tasks or methods in the Program.cs file, you can use asynchronous programming with async and await keywords. This will allow the program to perform I/O-bound operations without blocking the main thread, making it more responsive and efficient.*
 
-    *Aqui está uma versão aprimorada do arquivo Program.cs com métodos assíncronos:*
+    *Here is an improved version of the Program.cs file with asynchronous methods:*
 
     ```csharp
 
@@ -561,28 +561,28 @@ Use as seguintes etapas para concluir esta parte da demonstração:
 
     ```
 
-1. Implemente as atualizações sugeridas que ajudam a melhorar o desempenho do código (ou a confiabilidade) da sua classe `Program`.
+1. Implement the suggested updates that help to improve code performance (or reliability) of your `Program` class.
 
-1. Para garantir que nenhum erro tenha sido introduzido pelas alterações, crie e execute sua solução antes de continuar.
+1. To ensure that no errors were introduced by the changes, build and run your solution before continuing.
 
-1. Selecione todo o código no arquivo Program.cs e, em seguida, insira a solicitação de "confiabilidade" no modo de exibição de chat.
+1. Select all of the code in the Program.cs file, and then enter your "reliability" prompt in the Chat view.
 
-1. Examine as sugestões fornecidas pelo GitHub Copilot Chat.
+1. Review the suggestions provided by GitHub Copilot Chat.
 
     > [!NOTE]
-    > Você não precisa implementar as sugestões de atualização geradas pelo GitHub Copilot a partir deste quarta solicitação, mas deve examinar as sugestões.
+    > You don't need to implement the update suggestions that GitHub Copilot generated from this fourth prompt, but you should review the suggestions.
 
-    Por exemplo, se você inserir `@workspace /explain How can I improve exception handling for the selected code?` no modo de exibição de chat, o GitHub Copilot Chat sugerirá atualizações semelhantes à seguinte resposta:
+    For example, if you enter `@workspace /explain How can I improve exception handling for the selected code?` in the Chat view, GitHub Copilot Chat suggests updates that are similar to the following response:
 
-    *Para melhorar o tratamento de exceções no arquivo Program.cs, considere as seguintes sugestões: *
+    *To improve exception handling in the Program.cs file, you can implement the following suggestions:*
 
-    *1. Use Tipos de Exceção Específicos: em vez de capturar exceções genéricas, capture exceções específicas sempre que possível.*
+    *1. Use Specific Exception Types: Instead of catching generic Exception, catch specific exceptions where possible.*
 
-    *2. Adicionar Mais Contexto a Exceções: Forneça mais contexto nas mensagens de exceção para facilitar a depuração.*
+    *2. Add More Context to Exceptions: Provide more context in the exception messages to make debugging easier.*
 
-    *3. Registre Exceções: em vez de apenas imprimir exceções no console, considere registrá-las para melhor rastreabilidade.*
+    *3. Log Exceptions: Instead of just printing exceptions to the console, consider logging them for better traceability.*
 
-    *Aqui está uma versão melhorada do arquivo Program.cs com melhor tratamento de exceções:*
+    *Here is an improved version of the Program.cs file with better exception handling:*
 
     ```csharp
 
@@ -759,6 +759,6 @@ Use as seguintes etapas para concluir esta parte da demonstração:
 
     ```
 
-## Resumo
+## Summary
 
-Nesta demonstração, você usou o GitHub Copilot Chat para gerar sugestões que ajudam você a melhorar a confiabilidade e o desempenho do código em um aplicativo de exemplo. Você desenvolveu solicitações que orientaram o GitHub Copilot a fornecer sugestões que melhoram o tratamento de exceções, reduzem problemas inesperados e melhoram o suporte ao teste de unidade. Você também criou solicitações que se concentraram em melhorar o desempenho com tarefas ou métodos assíncronos.
+In this demo, you used GitHub Copilot Chat to generate suggestions that help you improve code reliability and performance in a sample application. You developed prompts that directed GitHub Copilot to provide suggestions that improve exception handling, reduce unexpected issues, and improve unit test support. You also created prompts that focused on improving performance with asynchronous tasks or methods.

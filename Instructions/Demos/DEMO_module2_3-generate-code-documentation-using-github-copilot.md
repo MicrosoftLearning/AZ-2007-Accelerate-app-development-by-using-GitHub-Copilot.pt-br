@@ -1,59 +1,59 @@
 ---
 demo:
-  title: 'Demonstração: Gerar documentação de código embutido usando o GitHub Copilot Chat'
-  module: 'Module 2: Generate documentation using GitHub Copilot tools'
+    title: 'Demo: Generate inline code documentation by using GitHub Copilot Chat'
+    module: 'Module 2: Generate documentation using GitHub Copilot tools'
 ---
 
-# Demonstração: Gerar documentação de código embutido usando o GitHub Copilot Chat
+# Demo: Generate inline code documentation by using GitHub Copilot Chat
 
-## Instruções
+## Instructions
 
-As atividades de demonstração são projetadas para um ambiente que inclui os seguintes recursos:
+The demo activities are designed for an environment that includes the following resources:
 
 - Visual Studio Code.
-- A extensão do kit de desenvolvimento em C# para o Visual Studio Code.
-- As extensões do GitHub Copilot e do GitHub Copilot Chat para Visual Studio Code. É necessária uma conta do GitHub com uma assinatura ativa do GitHub Copilot.
-- Projetos de amostras de código criadas usando C#.
+- The C# Dev Kit extension for Visual Studio Code.
+- The GitHub Copilot and GitHub Copilot Chat extensions for Visual Studio Code. A GitHub account with an active subscription for GitHub Copilot is required.
+- Sample code projects created using C#.
 
-**OBSERVAÇÃO**: Recomendamos que os instrutores considerem usar sua própria conta do GitHub e a assinatura do GitHub Copilot para as demonstrações. Isso irá permitir que você controle e personalize seu ambiente de desenvolvimento. Também facilitará o ajuste das demonstrações para atender às necessidades de suas salas de aula.
+**NOTE**: We recommend that instructors consider using their own GitHub account and GitHub Copilot subscription for the demos. This will enable you to control and customize your dev environment. It will also make it easier to adjust the demos to fit the needs of your classrooms.
 
-**IMPORTANTE**: Se você optar por executar as demonstrações no ambiente de laboratório hospedado em vez do seu computador de instrutor, poderá descompactar os aplicativos de exemplo no ambiente hospedado. Você precisará configurar as extensões do GitHub Copilot no ambiente hospedado antes de executar as demonstrações. Você pode perceber que o ambiente hospedado é mais lento do que o seu ambiente local, então talvez precise ajustar o ritmo das demonstrações de acordo.
+**IMPORTANT**: If you choose to run the demos in the hosted lab environment rather than your instructor PC, you can unzip the sample apps in the hosted environment. You will need to configure the GitHub Copilot extensions in the hosted environment before you can run the demos. You may find that the hosted environment is slower than your local environment, so you may need to adjust the pace of the demos accordingly.
 
-### Apresentar a demonstração
+### Introduce the demo
 
-A documentação do seu código é um aspecto importante do processo de desenvolvimento de software. A documentação embutida (comentários no código) ajuda os desenvolvedores a entender a base de código, sua finalidade e como usá-la.
+Documenting your code is an important aspect of the software development process. Inline documentation (code comments) help developers understand the codebase, its purpose, and how to use it.
 
-O GitHub Copilot Chat pode ajudá-lo a documentar seu código de maneira rápida e precisa. Você tem algumas opções para gerar documentação embutida usando o GitHub Copilot Chat:
+GitHub Copilot Chat can help you document your code quickly and accurately. You have a few options for generating inline documentation using GitHub Copilot Chat:
 
-- Construa sua própria solicitação em linguagem natural que pode ser usada para gerar a documentação específica para o seu código.
-- Use o comando `/doc` durante uma sessão de chat embutida para gerar comentários para o código selecionado.
-- Use a ação inteligente **Gerar Documentos** para gerar comentários para o código selecionado.
+- Construct your own natural language prompt that can be used to generate specific documentation.
+- Use the `/doc` command during an inline chat session to generate comments for selected code.
+- Use the **Generate Docs** smart action to generate comments for selected code.
 
-Documentar corretamente seu código cria uma base de código mais legível e de fácil manutenção, que é mais fácil de ser compreendida e trabalhada por outros desenvolvedores
+Properly documenting your code creates a more readable and maintainable codebase that's easier for other developers to understand and work with.
 
-### Gerar documentação de código embutido usando o modo de exibição chat
+### Generate inline code documentation using the Chat view
 
-Nesta demonstração, você irá usar o GitHub Copilot Chat para gerar a documentação de código embutido para o projeto `APL2007M2Sample1`.
+In this demonstration, you use GitHub Copilot Chat to generate inline code documentation for the `APL2007M2Sample1` project.
 
-Use as seguintes etapas para concluir esta seção da demonstração:
+Use the following steps to complete this section of the demo:
 
-1. Verifique se o projeto `APL2007M2Sample1` está aberto no Visual Studio Code.
+1. Ensure that you have the `APL2007M2Sample1` project open in Visual Studio Code.
 
-1. Abra o arquivo `MainWindow.xaml.cs` .
+1. Open the `MainWindow.xaml.cs` file.
 
-1. Selecione todo o código começando da declaração de namespace até o final do arquivo.
+1. Select all of the code starting from the namespace declaration to the end of the file.
 
-1. Abra o modo de exibição de chat.
+1. Open the Chat view.
 
-1. Para ver como o GitHub Copilot Chat documentaria o código selecionado, insira o seguinte prompt:
+1. To see how GitHub Copilot Chat would document the selected code, enter the following prompt:
 
     ```output
     @workspace #selection generate inline code documentation for the selected code
     ```
 
-1. Reserve um minuto para examinar a documentação de código sugerida.
+1. Take a minute to review the suggested code documentation.
 
-    A resposta gerada deve ser semelhante ao seguinte exemplo de código:
+    The generated response should look similar to the following code sample:
 
     ```csharp
 
@@ -165,56 +165,56 @@ Use as seguintes etapas para concluir esta seção da demonstração:
 
     ```
 
-    A resposta inclui comentários de código sugeridos e *uma parte* do código associado. Algumas partes do seu código podem ser omitidas deixá-lo mais sucinto. Você pode mover manualmente os comentários de código para o arquivo de código real.
+    The response includes suggested code comments and *a portion* of the associated code. Some of your code may be omitted for brevity. You could manually move code comments into the actual code file.
 
-    O chat embutido oferece uma abordagem mais direta para adicionar comentários ao seu código.
+    Inline chat provides a more direct approach for adding comments to your code.
 
-### Gerar documentação de código embutido usando chat embutido
+### Generate inline code documentation using inline chat
 
-1. Role até a parte superior do arquivo `MainWindow.xaml.cs`.
+1. Scroll to the top of the `MainWindow.xaml.cs` file.
 
-1. Selecione o método `OnStartButtonClick`.
+1. Select the `OnStartButtonClick` method.
 
-1. Para abrir um chat embutido, pressione **Ctrl+I**.
+1. To open an inline chat, press **Ctrl+I**.
 
-1. Para gerar a documentação embutida para o método `OnStartButtonClick`, insira o seguinte prompt:
+1. To generate inline documentation for the `OnStartButtonClick` method, enter the following prompt:
 
     ```output
     /doc
     ```
 
-1. Leve um minuto para examinar a documentação de código gerada.
+1. Take a minute to review the code documentation generated.
 
-    Observe que a documentação sugerida para o método `OnStartButtonClick` inclui um resumo e descrições dos dois parâmetros. Quando um método inclui um valor de retorno, uma descrição do valor de retorno também é incluída.
-
-    > [!IMPORTANT]
-    > Sempre revise as atualizações sugeridas do GitHub Copilot antes de aceitá-las. Se você descobrir um problema em uma atualização de código sugerida, poderá descartar a atualização ou tentar corrigir o problema antes de aceitar a atualização de código sugerida.
-
-1. Para descartar a atualização sugerida, selecione **Descartar**.
-
-    Na próxima seção, você gerará a documentação para todos os métodos de uma só vez.
-
-### Gerar documentação de código embutido usando a ação inteligente **Gerar Documentos**
-
-A ação inteligente **Gerar Documentos** é outra maneira de gerar documentação de código embutido. Você pode usar esta ação inteligente para gerar comentários que descrevem o código selecionado.
-
-Use as seguintes etapas para concluir esta seção da demonstração:
-
-1. No editor do Visual Studio Code, selecione todos os métodos *dentro* da classe `MainWindow`.
-
-1. Clique com o botão direito do mouse no código selecionado, selecione **Copilot** e selecione **Gerar Documentos**.
-
-    Aguarde até que a documentação seja gerada.
-
-1. Examine as alterações sugeridas.
+    Notice that the suggested documentation for the `OnStartButtonClick` method includes a summary and descriptions of the two parameters. When a method includes a return value, a description of the return value is also included.
 
     > [!IMPORTANT]
-    > Se você encontrar problemas na documentação gerada, modifique as alterações sugeridas antes de continuar.
+    > Always review the GitHub Copilot's suggested updates before accepting. If you discover an issue in a suggested code update, you can either discard the update or attempt to correct the issue before accepting the suggested code update.
 
-1. Selecione **Aceitar**.
+1. To discard the suggested update, select **Discard**.
 
-    Cada um dos métodos na classe `MainWindow` agora inclui comentários gerados.
+    In the next section, you generate documentation for all of the methods at once.
 
-### Resumo
+### Generate inline code documentation using the **Generate Docs** smart action
 
-Nesta demonstração, você usou o GitHub Copilot Chat para gerar a documentação de código embutido para o aplicativo `APL2007M2Sample1`. Você aprendeu a gerar documentação de código em linha usando a exibição Chat, o chat em linha e a ação inteligente **Gerar documentos**. Ao gerar comentários de código, você pode criar uma base de código mais legível e de fácil manutenção, que é mais fácil de ser entendida e trabalhada por outros desenvolvedores. A documentação de código embutido é uma parte essencial do desenvolvimento de software que ajuda os desenvolvedores a entender a base de código, sua finalidade e como usá-la.
+The **Generate Docs** smart action is another way to generate inline code documentation. You can use this smart action to generate comments that describe the selected code.
+
+Use the following steps to complete this section of the demo:
+
+1. In the Visual Studio Code editor, select all of the methods *inside* the `MainWindow` class.
+
+1. Right-click the selected code, select **Copilot**, and then select **Generate Docs**.
+
+    Wait for the documentation to be generated.
+
+1. Review the suggested changes.
+
+    > [!IMPORTANT]
+    > If you find issues in the generated documentation, modify the suggested changes before continuing.
+
+1. Select **Accept**.
+
+    Each of the methods in the `MainWindow` class now includes generated comments.
+
+### Summary
+
+In this demo, you used GitHub Copilot Chat to generate inline code documentation for the `APL2007M2Sample1` app. You learned how to generate inline code documentation using the Chat view, inline chat, and the **Generate Docs** smart action. By generating code comments, you can create a more readable and maintainable codebase that's easier for other developers to understand and work with. Inline code documentation is an essential part of software development that helps developers understand the codebase, its purpose, and how to use it.

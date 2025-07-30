@@ -1,77 +1,77 @@
 ---
 demo:
-  title: 'Demonstração: Criar testes de unidade usando o GitHub Copilot Chat'
-  module: 'Module 4: Develop unit tests using GitHub Copilot tools'
+    title: 'Demo: Create unit tests by using GitHub Copilot Chat'
+    module: 'Module 4: Develop unit tests using GitHub Copilot tools'
 ---
 
-# Demonstração: Criar testes de unidade usando o GitHub Copilot Chat
+# Demo: Create unit tests by using GitHub Copilot Chat
 
-## Instruções
+## Instructions
 
-As atividades de demonstração são projetadas para um ambiente que inclui os seguintes recursos:
+The demo activities are designed for an environment that includes the following resources:
 
 - Visual Studio Code.
-- A extensão do kit de desenvolvimento em C# para o Visual Studio Code.
-- As extensões do GitHub Copilot e do GitHub Copilot Chat para Visual Studio Code. É necessária uma conta do GitHub com uma assinatura ativa do GitHub Copilot.
-- Projetos de amostras de código criadas usando C#.
+- The C# Dev Kit extension for Visual Studio Code.
+- The GitHub Copilot and GitHub Copilot Chat extensions for Visual Studio Code. A GitHub account with an active subscription for GitHub Copilot is required.
+- Sample code projects created using C#.
 
-**OBSERVAÇÃO**: Recomendamos que os instrutores considerem usar sua própria conta do GitHub e a assinatura do GitHub Copilot para as demonstrações. Isso irá permitir que você controle e personalize seu ambiente de desenvolvimento. Também facilitará o ajuste das demonstrações para atender às necessidades de suas salas de aula.
+**NOTE**: We recommend that instructors consider using their own GitHub account and GitHub Copilot subscription for the demos. This will enable you to control and customize your dev environment. It will also make it easier to adjust the demos to fit the needs of your classrooms.
 
-**IMPORTANTE**: Se você optar por executar as demonstrações no ambiente de laboratório hospedado em vez do seu computador de instrutor, poderá descompactar os aplicativos de exemplo no ambiente hospedado. Você precisará configurar as extensões do GitHub Copilot no ambiente hospedado antes de executar as demonstrações. Você pode perceber que o ambiente hospedado é mais lento do que o seu ambiente local, então talvez precise ajustar o ritmo das demonstrações de acordo.
+**IMPORTANT**: If you choose to run the demos in the hosted lab environment rather than your instructor PC, you can unzip the sample apps in the hosted environment. You will need to configure the GitHub Copilot extensions in the hosted environment before you can run the demos. You may find that the hosted environment is slower than your local environment, so you may need to adjust the pace of the demos accordingly.
 
-### Apresentar a demonstração
+### Introduce the demo
 
-O Visual Studio Code e o Kit de Desenvolvimento em C# fornecem um conjunto avançado de recursos para ajudar você a criar e gerenciar testes de unidade para seus projetos em C#. Você pode habilitar os testes para seu projeto, adicionar pacotes de estrutura de testes, executar e gerenciar testes de unidade e gerar casos de testes de unidade usando o Kit de Desenvolvimento em C#.
+Visual Studio Code and the C# Dev Kit provide a rich set of features to help you create and manage unit tests for your C# projects. You can enable testing for your project, add test framework packages, run and manage unit tests, and generate unit test cases using the C# Dev Kit.
 
-O GitHub Copilot pode ajudar você a gerar testes de unidade para seu código fornecendo sugestões de chat embutidas.
+GitHub Copilot can help you generate unit tests for your code by providing inline chat suggestions.
 
-Nesta demonstração, você criará testes de unidade para um projeto de código usando o GitHub Copilot Chat no Visual Studio Code.
+In this demonstration, you create unit tests for a code project by using GitHub Copilot Chat in Visual Studio Code.
 
-### Criar um projeto de teste do xUnit para seus testes de unidade
+### Create an xUnit test project for your unit tests
 
-Os projetos de testes de unidade costumam ser criados em uma pasta separada do projeto que você está testando. Essa separação ajuda a manter o código de teste separado do código de produção. Nesta demonstração, você irá criar um projeto de teste do xUnit para o projeto APL2007M4PrimeService.
+Unit test projects are typically created in a folder that's separate from the project that you're testing. This separation helps to keep the test code separate from the production code. In this demo, you create an xUnit test project for the APL2007M4PrimeService project.
 
-Para criar um novo projeto de teste do xUnit, execute as seguintes etapas:
+To create a new xUnit test project, complete the following steps:
 
-1. Abra a pasta **APL2007M4PrimeService** no Visual Studio Code.
+1. Open the **APL2007M4PrimeService** folder in Visual Studio Code.
 
-1. Abra o modo de exibição do Gerenciador de Soluções no Visual Studio Code.
+1. Open the Solution Explorer view in Visual Studio Code.
 
-    A exibição do Gerenciador de Soluções é acessível no painel da barra lateral do Visual Studio Code. O Gerenciador de Soluções é semelhante ao modo de exibição do Gerenciador, mas foi especificamente projetado para trabalhar com projetos do Visual Studio Code, em vez de sistemas de arquivos de caráter geral.
+    The Solution Explorer view is accessible from Visual Studio Code's Side Bar panel. The Solution Explorer is similar to the Explorer view, but it's specifically designed to work with Visual Studio Code projects rather than general file systems.
 
-1. No modo de exibição do Gerenciador de Soluções, clique com o botão direito do mouse na pasta **APL2007M4PrimeService** e, em seguida, selecione **Novo Projeto**.
+1. In the Solution Explorer view, right-click **APL2007M4PrimeService**, and then select **New Project**.
 
-    Se você não vir a opção **Novo Projeto**, verifique se você está trabalhando no modo de exibição do *Gerenciador de Soluções*, não no modo de exibição do *Gerenciador*.
+    If you don't see the **New Project** option, ensure that you're working in the *Solution Explorer* view, not the *Explorer* view.
 
-1. Quando a lista de tipos de projeto aparecer, selecione **Projeto de Testes do xUnit**.
+1. When the list of project types appears, select **xUnit Test Project**.
 
-1. Para o nome do projeto, digite **PrimeService.UnitTests** e pressione Enter.
+1. For the project name, type **PrimeService.UnitTests** and then press Enter.
 
-    O nome do projeto deve refletir o nome da classe que você está testando e deve ser exclusivo dentro da solução. Nesse caso, a classe é chamada `PrimeService` e, portanto, o projeto de teste será chamado de `PrimeService.UnitTests`.
+    The project name should reflect the name of the class that you're testing and it should be unique within the solution. In this case the class is named `PrimeService`, so the test project is named `PrimeService.UnitTests`.
 
-1. Selecione o local do diretório padrão.
+1. Select the default directory location.
 
-    Você também pode criar o projeto de testes do xUnit usando o terminal do Visual Studio Code. Abra um terminal, navegue até a pasta Números e, em seguida, execute o seguinte comando:
+    You could also create the xUnit test project using the Visual Studio Code terminal. Open a terminal, navigate to the Numbers folder, and then run the following command:
 
     ```plaintext
     dotnet new xunit -n PrimeService.UnitTests
     ```
 
-1. Selecione **Criar Projeto** e, em seguida, expanda a pasta PrimeService.UnitTests.
+1. Select **Create Project**, and then expand the PrimeService.UnitTests folder.
 
-1. Exclua o arquivo UnitTest1.cs criado com o projeto PrimeService.UnitTests.
+1. Delete the UnitTest1.cs file that's created with the PrimeService.UnitTests project.
 
-    Antes de criar um novo teste de unidade, você precisa adicionar uma referência ao projeto de teste de unidade que aponta para o projeto da classe que você quer testar.
+    Before you create a new unit test, you need to add a reference to the unit test project that points to the class project that you want to test.
 
-1. Para adicionar uma referência ao projeto de código, clique com o botão direito do mouse em **PrimeService.UnitTests**, selecione **Adicionar Referência do Projeto** e selecione **Números**.
+1. To add a reference to your code project, right-click **PrimeService.UnitTests**, select **Add Project Reference**, and then select **Numbers**.
 
-1. Para criar uma classe para seus testes de unidade, clique com o botão direito do mouse em **PrimeService.UnitTests**, selecione **Novo arquivo**, selecione **Classe**, digite **PrimeServiceTests** e pressione Enter.
+1. To create a class for your unit tests, right-click **PrimeService.UnitTests**, select **New File**, select **Class**, type **PrimeServiceTests** and then press Enter.
 
-    O Visual Studio Code deve abrir o arquivo PrimeServiceTests.cs para você.
+    Visual Studio Code should open the PrimeServiceTests.cs file for you.
 
-1. Reserve um minuto para examinar o arquivo PrimeServiceTests.cs.
+1. Take a minute to examine the PrimeServiceTests.cs file.
 
-    Seu arquivo deve ser semelhante ao seguinte snippet de código:
+    Your file should be similar to the following code snippet:
 
     ```csharp
 
@@ -82,7 +82,7 @@ Para criar um novo projeto de teste do xUnit, execute as seguintes etapas:
 
     ```
 
-1. Para ajudar a evitar problemas de namespace quando você compilar o projeto, atualize o arquivo PrimeServiceTests.cs da seguinte maneira:
+1. To help avoid namespace issues when you build the project, update the PrimeServiceTests.cs file as follows:
 
     ```csharp
 
@@ -93,11 +93,11 @@ Para criar um novo projeto de teste do xUnit, execute as seguintes etapas:
 
     ```
 
-    Um namespace em C# é usado para organizar classes e tipos relacionados. É uma maneira de evitar colisões de nome e facilitar a compreensão da organização do código. O sufixo `.UnitTests` no namespace do projeto de teste é uma convenção comum para indicar que o código nesse namespace está testando o código no namespace System.Numbers. Isso deixa claro ao examinar a estrutura do projeto qual código é o código de produção e qual código é o código de teste.
+    A namespace in C# is used to organize related classes and types. It's a way to avoid name collisions and to make it easier to understand the organization of the code. The `.UnitTests` suffix in the test project's namespace is a common convention to indicate that the code in this namespace is testing the code in the System.Numbers namespace. This makes it clear when looking at the project structure which code is production code and which code is test code.
 
-1. Reserve um minuto para examinar o arquivo PrimeService.UnitTests.csproj.
+1. Take a minute to examine the PrimeService.UnitTests.csproj file.
 
-    O arquivo PrimeService.UnitTests.csproj deve incluir um `<ItemGroup>` que contém os seguintes elementos `<PackageReference />`:
+    The PrimeService.UnitTests.csproj file should include an `<ItemGroup>` that contains the following `<PackageReference />` elements:
 
     ```xml
 
@@ -108,7 +108,7 @@ Para criar um novo projeto de teste do xUnit, execute as seguintes etapas:
 
     ```
 
-    Essas referências de pacote são necessárias para usar o xUnit como biblioteca de testes e configurar o executor de testes. Você também deve ver os seguintes elementos `<ItemGroup>` no arquivo PrimeService.UnitTests.csproj:
+    These package references are required to use xUnit as the test library and to configure the test runner. You should also see the following `<ItemGroup>` elements in the PrimeService.UnitTests.csproj file:
 
     ```xml
 
@@ -121,75 +121,75 @@ Para criar um novo projeto de teste do xUnit, execute as seguintes etapas:
 
     ```
 
-    Esses elementos são necessários para fazer referência ao projeto Números e usar a estrutura de testes do xUnit.
+    These elements are required to reference the Numbers project and to use the xUnit test framework.
 
-1. Para criar a solução, pressione **Ctrl+Shift+B** e selecione **dotnet: build**.
+1. To build the solution, press **Ctrl+Shift+B**, and then select **dotnet: build**.
 
-    Você também pode construir a solução usando um comando .NET CLI (dotnet build) ou clicando com o botão direito do mouse no nó da solução na exibição do Gerenciador de Soluções e selecionando **Build**.
-
-    > [!NOTE]
-    > Se você vir **erros** de build, corrija os erros antes de continuar a demonstração. Você precisa obter um build bem-sucedido antes de continuar.
-
-Agora você está pronto para criar um teste de unidade usando o Chat do GitHub Copilot.
-
-### Criar testes de unidade usando o modo de exibição de Chat
-
-O GitHub Copilot e o Chat do GitHub Copilot podem ajudar você a gerar testes de unidade para seu código fornecendo sugestões com base no contexto da sua base de código. Você pode usar o Chat do GitHub Copilot para gerar testes de unidade para classes ou métodos específicos no seu código.
-
-Use as seguintes etapas para concluir esta seção da demonstração:
-
-1. Na exibição do Gerenciador de Soluções em Numbers, abra o arquivo PrimeService.cs.
-
-1. Selecione o método **IsPrime**.
-
-1. Abra o modo de exibição de chat.
-
-1. Selecione o botão **Anexar contexto**.
-
-    O botão **Anexar contexto** (ícone de clipe de papel) é usado para informar o GitHub Copilot sobre o contexto relevante dentro da sua base de código. O contexto adicional ajuda o GitHub Copilot Chat a fornecer sugestões mais precisas. Nesse caso, você quer que o GitHub Copilot use seu arquivo PrimeServiceTests.cs ao propor testes de unidade.
-
-1. Na lista suspensa **Pesquisar anexos**, na seção **aberta recentemente**, selecione **PrimeServiceTests.cs**.
-
-    O menu suspenso **Pesquisar anexos** fornece algumas opções padrão que você pode escolher. Ele também inclui uma lista de arquivos abertos recentemente. O arquivo PrimeServiceTests.cs deve ser listado na seção aberta recentemente.
-
-    As opções de anexos de pesquisa incluem
-
-1. Selecione o botão **Anexar contexto** novamente.
-
-1. Na caixa de texto Pesquisar anexos, digite **PrimeService.Unit** e selecione **PrimeService.UnitTests.csproj**.
+    You could also build the solution using a .NET CLI command (dotnet build) or by right-clicking the solution node in the Solution Explorer view and selecting **Build**.
 
     > [!NOTE]
-    > Demonstre como arrastar um arquivo da visualização do Explorer e soltá-lo na visualização de chat. Em muitos casos, essa é uma maneira mais rápida de anexar contexto.
+    > If you see any build **errors**, correct the errors before you continue the demo. You must have a successful build before you continue.
 
-1. Observe que a visualização do chat é atualizada com o contexto adicional.
+You're now ready to create a unit test using GitHub Copilot Chat.
 
-1. Na visualização de chat, selecione **/tests adicionar testes de unidade para meu código**.
+### Create unit tests using Chat view
 
-    A opção **/tests adiciona testes de unidade para meu código** é usada para gerar testes de unidade para o código que você selecionou no editor. Nesse caso, você selecionou o método **IsPrime** no arquivo PrimeService.cs.
+GitHub Copilot and GitHub Copilot Chat can help you generate unit tests for your code by providing suggestions based on the context of your codebase. You can use GitHub Copilot Chat to generate unit tests for specific methods or classes in your code.
 
-1. Reserve um minuto para revisar as sugestões do GitHub Copilot.
+Use the following steps to complete this section of the demo:
 
-    A sugestão do GitHub Copilot inclui duas seções, um "Plano" e um exemplo de código contendo testes de unidade.
+1. In the Solution Explorer view, under Numbers, open the PrimeService.cs file.
 
-    O plano sugere a criação de um novo arquivo PrimeServiceTest.cs para os testes unitários. Ele também sugere criar o arquivo na pasta do projeto Numbers.
+1. Select the **IsPrime** method.
 
-1. Na visualização de chat, selecione **Aplicar edições**.
+1. Open the Chat view.
 
-1. Observe que o botão Aplicar edições coloca o código do teste de unidade em uma nova guia no editor.
+1. Select the **Attach Context** button.
 
-    Você pode usar este código para atualizar o arquivo PrimeServiceTests.cs no seu projeto PrimeService.UnitTests.
+    The **Attach Context** button (paperclip icon) is used to inform GitHub Copilot of relevant context within your codebase. The additional context helps GitHub Copilot Chat to provide more accurate suggestions. In this case, you want GitHub Copilot to use your PrimeServiceTests.cs file when proposing unit tests.
 
-1. No menu **Arquivo**, selecione **Salvar como** e navegue até a pasta PrimeService.UnitTests.
+1. In the **Search attachments** dropdown list, in the **recently opened** section, select **PrimeServiceTests.cs**.
 
-1. Selecione **PrimeServiceTests.cs** e, em seguida, selecione **Salvar**.
+    The **Search attachments** dropdown provides some default options that you can choose from. It also includes a list of recently opened files. The PrimeServiceTests.cs file should be listed in the recently opened section.
 
-1. Quando solicitado a substituir o arquivo existente, selecione **Sim**.
+    The Search attachments options include
 
-1. Reserve um minuto para revisar o arquivo PrimeServiceTests.cs atualizado.
+1. Select the **Attach Context** button again.
 
-    O código sugerido pelo GitHub Copilot Chat deve incluir testes para números primos e não primos específicos. O código sugerido pode incluir testes parametrizados (usando atributos `[Theory]` e `[InlineData]`) para testar múltiplos conjuntos de dados de forma mais concisa.
+1. In the Search attachments text box, type **PrimeService.Unit**, and then select **PrimeService.UnitTests.csproj**.
 
-    O snippet de código fornecido deve ser semelhante ao seguinte snippet de código:
+    > [!NOTE]
+    > Demonstrate how to drag a file from the Explorer view and drop it onto the Chat view. In many cases this is a quicker way to attach context.
+
+1. Notice that the Chat view is updated with the additional context.
+
+1. In the Chat view, select **/tests add unit tests for my code**.
+
+    The **/tests add unit tests for my code** option is used to generate unit tests for the code that you've selected in the editor. In this case, you selected the **IsPrime** method in the PrimeService.cs file.
+
+1. Take a minute to review GitHub Copilot's suggestions.
+
+    GitHub Copilot's suggestion includes two sections, a "Plan" and a code sample containing unit tests.
+
+    The plan suggests creating a new PrimeServiceTest.cs file for the unit tests. It also suggests creating the file in the Numbers project folder.
+
+1. In the Chat view, select **Apply Edits**.
+
+1. Notice that the Apply Edits button places the unit test code on a new tab in the editor.
+
+    You can use this code to update the PrimeServiceTests.cs file in your PrimeService.UnitTests project.
+
+1. On the **File** menu, select **Save As**, and then navigate to the PrimeService.UnitTests folder.
+
+1. Select **PrimeServiceTests.cs**, and then select **Save**.
+
+1. When prompted to overwrite the existing file, select **Yes**.
+
+1. Take a minute to review the updated PrimeServiceTests.cs file.
+
+    The code suggested by GitHub Copilot Chat should include tests for specific prime and non-prime numbers. The suggested code may include parameterized tests (using `[Theory]` and `[InlineData]` attributes) to test multiple data sets more concisely.
+
+    The code snippet provided should be similar to the following code snippet:
 
     ```csharp
 
@@ -244,7 +244,7 @@ Use as seguintes etapas para concluir esta seção da demonstração:
 
     ```
 
-    Observe que os testes de unidade exigem uma instância da classe PrimeService.
+    Notice that the unit tests require an instance of the PrimeService class.
 
     ```csharp
 
@@ -256,38 +256,38 @@ Use as seguintes etapas para concluir esta seção da demonstração:
 
     ```
 
-1. Recrie a solução.
+1. Rebuild the solution.
 
-    Você deverá ver "setas de teste" verdes ao lado de cada teste de unidade se a compilação for bem-sucedida.
+    You should see green "test arrows" next to each unit test if the build is successful.
 
-    Você criará mais testes de unidade na próxima seção, portanto, não é necessário executar os testes no momento.
+    You create more unit tests the next section, so there's no need to run the tests at this time.
 
-    No entanto, existem várias formas de executar seus testes. Por exemplo:
+    However, there are several ways to run your tests. For example:
 
-    - Você pode executar os testes no terminal do Visual Studio Code usando o comando `dotnet test`.
-    - Você pode executar os testes no modo de exibição do Gerenciador de Testes do Visual Studio Code.
-    - Você pode executar os testes na Paleta de Comandos do Visual Studio Code usando o comando **Test: Run All Tests**.
-    - Você pode executar os testes no editor do Visual Studio Code selecionando a opção **Executar Testes no Arquivo Atual** no menu de contexto.
+    - You can run the tests from the Visual Studio Code terminal by using the `dotnet test` command.
+    - You can run the tests from the Visual Studio Code Test Explorer view.
+    - You can run the tests from the Visual Studio Code Command Palette by using the **Test: Run All Tests** command.
+    - You can run the tests from the Visual Studio Code editor by selecting the **Run Tests in Current File** option from the context menu.
 
-    Os testes criados durante esta seção da demonstração devem ser executados com sucesso. As "setas de teste" verdes ao lado do teste de unidade se tornam círculos verdes com uma marca de seleção.
+    The tests you created during this section of the demo should run successfully. The green "test arrows" next to the unit test become green circles with a checkmark.
 
-### Criar testes de unidade usando o chat embutido
+### Create unit tests using inline chat
 
-Use as seguintes etapas para concluir esta seção da demonstração:
+Use the following steps to complete this section of the demo:
 
-1. No modo de exibição do Gerenciador de Soluções, abra o arquivo PrimeService.cs.
+1. In the Solution Explorer view, open the PrimeService.cs file.
 
-    O PrimeService.cs está localizado na pasta Números.
+    PrimeService.cs is located in the Numbers folder.
 
-1. Selecione o método IsPrime.
+1. Select the IsPrime method.
 
-1. Abra uma sessão de chat embutida e insira o seguinte prompt:
+1. Open an inline chat session, and then enter the following prompt:
 
     ```plaintext
     Create unit tests for the IsPrime method using the xUnit framework.
     ```
 
-1. Reserve um minuto para ler as sugestões fornecidas pelo chat embutido.
+1. Take a minute to review the suggestions provided by inline chat.
 
     ```csharp
 
@@ -342,12 +342,12 @@ Use as seguintes etapas para concluir esta seção da demonstração:
 
     ```
 
-1. Observe que a visualização de chat e o bate-papo em linha produzem cobertura de teste semelhante.
+1. Notice that the Chat view and inline chat produce similar test coverage.
 
-1. Para descartar a sugestão de chat em linha, selecione **Descartar** e feche a guia de arquivo criada pelo chat em linha.
+1. To discard the inline chat suggestion, select **Discard**, and then close the file tab created by the inline chat.
 
-    Tenha em mente que os testes de unidade sugeridos pelo GitHub Copilot durante esta demonstração podem estar incompletos. A próxima demonstração examina casos extremos adicionais que você pode considerar testar.
+    Keep in mind that the unit tests suggested by GitHub Copilot during this demo may be incomplete. The next demo examines additional edge cases that you might consider testing.
 
-### Resumo
+### Summary
 
-Nesta demonstração, você criou testes de unidade para um projeto de código usando o GitHub Copilot Chat no Visual Studio Code. Você criou um projeto de testes do xUnit, adicionou uma referência ao projeto que você queria testar e gerou testes de unidade para o método `IsPrime` na classe `PrimeService`. Você usou o Chat do GitHub Copilot para gerar testes de unidade no modo de exibição de Chat e no chat embutido.
+In this demo, you created unit tests for a code project by using GitHub Copilot Chat in Visual Studio Code. You created an xUnit test project, added a reference to the project that you wanted to test, and generated unit tests for the `IsPrime` method in the `PrimeService` class. You used GitHub Copilot Chat to generate unit tests in the Chat view and the inline chat.
