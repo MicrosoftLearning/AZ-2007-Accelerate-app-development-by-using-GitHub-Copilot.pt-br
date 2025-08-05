@@ -1,99 +1,99 @@
 ---
 demo:
-    title: 'Demo: Create code by using GitHub Copilot Inline Chat'
-    module: 'Module 3: Develop code features using GitHub Copilot tools'
+  title: 'Demonstração: Criar código usando o chat embutido do GitHub Copilot'
+  module: 'Module 3: Develop code features using GitHub Copilot tools'
 ---
 
-# Demo: Create code by using GitHub Copilot Inline Chat
+# Demonstração: Criar código usando o chat embutido do GitHub Copilot
 
-## Instructions
+## Instruções
 
-The demo activities are designed for an environment that includes the following resources:
+As atividades de demonstração são projetadas para um ambiente que inclui os seguintes recursos:
 
 - Visual Studio Code.
-- The C# Dev Kit extension for Visual Studio Code.
-- The GitHub Copilot and GitHub Copilot Chat extensions for Visual Studio Code. A GitHub account with an active subscription for GitHub Copilot is required.
-- Sample code projects created using C#.
+- A extensão do kit de desenvolvimento em C# para o Visual Studio Code.
+- As extensões do GitHub Copilot e do GitHub Copilot Chat para Visual Studio Code. É necessária uma conta do GitHub com uma assinatura ativa do GitHub Copilot.
+- Projetos de amostras de código criadas usando C#.
 
-**NOTE**: We recommend that instructors consider using their own GitHub account and GitHub Copilot subscription for the demos. This will enable you to control and customize your dev environment. It will also make it easier to adjust the demos to fit the needs of your classrooms.
+**OBSERVAÇÃO**: Recomendamos que os instrutores considerem usar sua própria conta do GitHub e a assinatura do GitHub Copilot para as demonstrações. Isso irá permitir que você controle e personalize seu ambiente de desenvolvimento. Também facilitará o ajuste das demonstrações para atender às necessidades de suas salas de aula.
 
-**IMPORTANT**: If you choose to run the demos in the hosted lab environment rather than your instructor PC, you can unzip the sample apps in the hosted environment. You will need to configure the GitHub Copilot extensions in the hosted environment before you can run the demos. You may find that the hosted environment is slower than your local environment, so you may need to adjust the pace of the demos accordingly.
+**IMPORTANTE**: Se você optar por executar as demonstrações no ambiente de laboratório hospedado em vez do seu computador de instrutor, poderá descompactar os aplicativos de exemplo no ambiente hospedado. Você precisará configurar as extensões do GitHub Copilot no ambiente hospedado antes de executar as demonstrações. Você pode perceber que o ambiente hospedado é mais lento do que o seu ambiente local, então talvez precise ajustar o ritmo das demonstrações de acordo.
 
-### Introduce the demo
+### Apresentar a demonstração
 
-The GitHub Copilot Chat extension for Visual Studio Code includes three chat interfaces:
+A extensão de Chat do GitHub Copilot para Visual Studio Code inclui três interfaces de chat:
 
-- The **Chat view** provides an AI assistant that's available to help you at any time.
-- A **Quick Chat** window can be used to ask a quick question and then get back into what you're doing.
-- The **inline chat** interface opens directly in the editor for contextual interactions while you're coding.
+- A **visualização do Chat** oferece um assistente de IA que está disponível para ajudá-lo a qualquer momento.
+- Uma janela **Quick Chat** pode ser usada para fazer uma pergunta rápida e, em seguida, voltar ao que você está fazendo.
+- A **interface de chat** embutida é aberta diretamente no editor para interações contextuais enquanto você está codificando.
 
-The Chat view and Quick Chat window enable interactive multi-turn conversations with the AI. Both of these interfaces provide a way to ask questions, get help with a coding problem, and generate code. During a conversation, GitHub Copilot responses include natural language text, code blocks, and other elements. When code blocks are provided in a response, you can copy them or inject them directly into your code editor.
+A exibição de Chat e a janela de Chat Rápido permitem conversas interativas de vários turnos com a IA. Ambas as interfaces fornecem uma maneira de fazer perguntas, obter ajuda com um problema de codificação e gerar código. Durante uma conversa, as respostas do GitHub Copilot incluem texto em linguagem natural, blocos de código e outros elementos. Quando os blocos de código são fornecidos em uma resposta, você pode copiá-los ou injetá-los diretamente no editor de código.
 
-The inline chat interface is designed to provide contextual help and code suggestions while you're coding.
+A interface de chat embutida foi projetada para fornecer ajuda contextual e sugestões de código enquanto você está codificando.
 
-In this demonstration, you use GitHub Copilot's inline chat feature to generate new code features. The demonstration is a continuation of the project scenario in the previous demonstration. Use the prepared sample app, `APL2007M3SalesReport-InlineChat`, to start the demo. During the demo you'll update the `SalesData` data structure and the `GenerateSalesData` method. You'll also update the `QuarterlySalesReport` method to include additional calculations and display options.
+Nesta demonstração, você irá usar o recurso de chat embutido do GitHub Copilot para gerar novos recursos de código. A demonstração é uma continuação do cenário do projeto apresentado na demonstração anterior. Use o aplicativo de exemplo preparado, `APL2007M3SalesReport-InlineChat`, para iniciar a demonstração. Durante a demonstração, você irá atualizar a estrutura de dados `SalesData` e o método `GenerateSalesData`. Você também atualizará o método `QuarterlySalesReport` para incluir cálculos adicionais e opções de exibição.
 
-#### Review the coding tasks and project goals
+#### Examinar as tarefas de codificação e as metas do projeto
 
-This demonstration focuses on using GitHub Copilot to accelerate the following tasks:
+Esta demonstração se concentra no uso do GitHub Copilot para acelerar as seguintes tarefas:
 
-1. You will update the `SalesData` data structure and `GenerateSalesData` method to produce a data sample that resembles "actual" data.
+1. Você irá atualizar a estrutura de dados `SalesData` e o método `GenerateSalesData` para produzir uma amostra de dados que se assemelhe aos dados “reais”.
 
-    - dateSold: no changes are required.
-    - departmentName: The string values should be randomly selected from a list of 8 departments. For each department name, create a 4-character abbreviation that can be included in the productID.
-    - productID: change from `int` to `string` data type. The productID values should be formatted using the pattern "`DDDD-###-SS-CC-MMM`" where the components of the ID are defined as follows:
+    - dateSold: nenhuma alteração é necessária.
+    - departmentName: Os valores de cadeia de caracteres devem ser selecionados aleatoriamente em uma lista de 8 departamentos. Para cada nome de departamento, crie uma abreviação de 4 caracteres que pode ser incluída no productID.
+    - productID: alterar do tipo de dados `int` para `string`. Os valores productID devem ser formatados usando o padrão "`DDDD-###-SS-CC-MMM`" em que os componentes da ID são definidos da seguinte maneira:
 
-        - a 4-character code representing the department.
-        - a 3-digit number representing the product.
-        - a 2-character code representing the product size.
-        - a 2-character code representing the product color.
-        - a 3-character code representing the manufacturing site (randomly selected from a list of 10 manufacturing sites). The codes should be a 2-letter ISO country code followed by a digit (e.g., US1, CA2, MX3, etc.).
+        - um código de 4 caracteres que representa o departamento.
+        - um número de 3 dígitos que representa o produto.
+        - um código de 2 caracteres que representa o tamanho do produto.
+        - um código de 2 caracteres que representa a cor do produto.
+        - um código de 3 caracteres que representa o site de fabricação (selecionado aleatoriamente em uma lista de 10 sites de fabricação). Os códigos devem ser um código de país ISO de 2 letras seguido por um dígito (por exemplo, US1, CA2, MX3 etc.).
 
-    - quantitySold: no changes are required.
-    - unitPrice: Raise the lower bound of the price range to 25 and the upper bound to 300.
-    - baseCost: Add a field for the manufacturing cost of the item. The baseCost values should be generated using randomly generated discount off the unitPrice (5 to 20 percent).
-    - volumeDiscount: Add a field for a volume discount percentage. The value assigned to volumeDiscount should be the integer component of 10 percent of the quantitySold (10% of 19 units = 1% volumeDiscount).
-    - Increase the number of records generated to 10,000.
+    - quantitySold: nenhuma alteração é necessária.
+    - unitPrice: Aumente o limite inferior da faixa de preços para 25 e o limite superior para 300.
+    - baseCost: Adicione um campo para o custo de fabricação do item. Os valores baseCost devem ser gerados usando o desconto gerado aleatoriamente do unitPrice (5 a 20%).
+    - volumeDiscount: Adicione um campo para uma porcentagem de desconto de volume. O valor atribuído a volumeDiscount deve ser o componente inteiro de 10% da quantitySold (10% de 19 unidades = 1% volumeDiscount).
+    - Aumente o número de registros gerados para 10.000.
 
-1. You will update the `QuarterlySalesReport` method as follows:
+1. Você irá atualizar o método `QuarterlySalesReport` da seguinte maneira:
 
-    1. When displaying the sales results, list the results in a logical order. For example, when listing total sale by quarter, the quarters should be listed in order from Q1 to Q4.
-    1. Display currency values using regional settings.
-    1. Include calculations for quarterly profit and profit percentage
-    1. Include calculations for quarterly sales, profit, and profit percentage by department.
+    1. Ao exibir os resultados das vendas, liste os resultados em uma ordem lógica. Por exemplo, ao listar a venda total por trimestre, os trimestres devem ser listados em ordem do 1º ao 4º trimestre.
+    1. Exibir valores de moeda usando configurações regionais.
+    1. Incluir cálculos para o lucro trimestral e o percentual de lucro
+    1. Inclui cálculos para vendas trimestrais, lucro e percentual de lucro por departamento.
 
-#### Explain your approach to developing prompts for GitHub Copilot Chat
+#### Explique sua abordagem para desenvolver prompts para o GitHub Copilot Chat
 
-GitHub Copilot's inline chat feature uses the prompt you submit to understand the task or problem you're trying to solve. The prompts should be specific and concise. Good prompts produce better responses.
+O recurso de chat embutido do GitHub Copilot usa a solicitação que você envia para entender a tarefa ou o problema que você está tentando resolver. As solicitações devem ser específicas e concisas. Solicitações bem feitas produzem respostas melhores.
 
-When you develop prompts for GitHub Copilot, consider the following best practices:
+Ao desenvolver solicitações para o GitHub Copilot, considere as seguintes práticas recomendadas:
 
-- Be specific and keep it simple: Provide clear and concise prompts that describe the task or problem you're trying to solve. Avoid using complex language or jargon that could confuse the AI.
-- Use natural language: Write prompts in a conversational tone. Use natural language that you would use when talking to a colleague or team member.
-- Break down complex tasks: If the task is complex, break it down into smaller steps. Provide prompts for each step to help GitHub Copilot generate the correct code.
-- Provide context: Include relevant information that helps GitHub Copilot understand the task or problem you're trying to solve. Include details about the data, variables, or code blocks that are relevant to the prompt.
-- Use chat participants, slash commands, and chat variables: GitHub Copilot's inline chat feature supports chat participants, slash commands, and chat variables. Use these features to interact with GitHub Copilot and provide additional context for your prompts.
+- Especifique e simplifique: Forneça solicitações claras e concisas que descrevem a tarefa ou o problema que você está tentando resolver. Evite usar linguagem complexa ou jargão que possa confundir a IA.
+- Use linguagem natural: Escreva solicitações em um tom de conversa. Use a linguagem natural que você usaria ao falar com um colega ou membro da equipe.
+- Divida tarefas complexas: Se a tarefa for complexa, divida-a em etapas menores. Forneça solicitações para cada etapa para ajudar o GitHub Copilot a gerar o código correto.
+- Forneça contexto: Inclua informações relevantes que ajudam o GitHub Copilot a entender a tarefa ou o problema que você está tentando resolver. Inclua detalhes sobre os dados, variáveis ou blocos de código relevantes para a solicitação.
+- Use participantes de chat, comandos de barra e variáveis de chat: O recurso de chat embutido do GitHub Copilot dá suporte a participantes de chat, comandos de barra e variáveis de chat. Use esses recursos para interagir com o GitHub Copilot e fornecer contexto adicional para suas solicitações.
 
-### Generate data structures using inline chat
+### Gerar estruturas de dados usando chat embutido
 
-Projects generally begin with the features or parameters that are either fixed or known. Selecting a data source or creating sample data is often a good place to start.
+Os projetos geralmente começam com recursos ou parâmetros que são fixos ou conhecidos. Selecionar uma fonte de dados ou criar dados de exemplo geralmente é um bom lugar para começar.
 
-In this section of the demo, you use data structures to help create simulated sales data. The data provides useful context for GitHub Copilot when you update the `QuarterlySalesReport` method.
+Nesta seção da demonstração, você irá usar estruturas de dados para ajudar a criar dados de vendas simulados. Os dados fornecem contexto útil para o GitHub Copilot quando você atualiza o método `QuarterlySalesReport`.
 
 > [!NOTE]
-> In an actual business project, you'd probably use historical data rather generating simulated data. In this training, generating simulated data provides an opportunity to practice using the GitHub Copilot tools. Simulating data isn't suggested as a best practice for business projects.
+> Em um projeto de negócios real, você provavelmente usaria dados históricos em vez de gerar dados simulados. Neste treinamento, a geração de dados simulados oferece uma oportunidade de praticar usando as ferramentas do GitHub Copilot. A simulação de dados não é sugerida como uma prática recomendada para projetos de negócios.
 
-Your project goals indicate that you need to work on the following data structures:
+Suas metas de projeto indicam que você precisa trabalhar nas seguintes estruturas de dados:
 
-- You need a list of 8 department names. Each department name should be abbreviated using a 4-character string. Pick an industry for your fictional company such as Clothing or Sports Equipment, and then have GitHub Copilot generate a dictionary of department names and 4-char codes.
-- You need a list of 10 manufacturing sites. Each site should be represented by a 3-character code. The codes can be a 2-letter ISO country code followed by a digit (e.g., US1, CA2, MX3, etc.). Have GitHub Copilot generate a dictionary of 10 manufacturing sites using 3-4 country codes.
-- You need to update the `SalesData` data structure. You need to include the new fields for: department code, manufacturing site code. You also need to change the data type for productID from `int` to `string`.
+- Você precisa de uma lista de 8 nomes de departamento. Cada nome de departamento deve ser abreviado usando uma cadeia de caracteres de 4 caracteres. Escolha uma indústria para sua empresa fictícia, como Roupas ou Equipamentos Esportivos, e faça com que o GitHub Copilot gere um dicionário de nomes de departamento e códigos de 4 caracteres.
+- Você precisa de uma lista de 10 locais de fabricação. Cada site deve ser representado por um código de 3 caracteres. Os códigos podem ser um código de país ISO de 2 letras seguido por um dígito (por exemplo, US1, CA2, MX3 etc.). Fazer com que o GitHub Copilot gere um dicionário de 10 sites de fabricação usando códigos de país 3 a 4.
+- Você precisa atualizar a estrutura de dados `SalesData`. Você precisa incluir os novos campos para: código do departamento, código do site de fabricação. Você também precisa alterar o tipo de dados para productID de `int` para `string`.
 
-To create and update the data structure, complete the following steps:
+Para criar e atualizar a estrutura de dados, conclua as seguintes etapas:
 
-1. Open the **APL2007M3SalesReport-InlineChat** project folder in Visual Studio Code.
+1. Abra a pasta de projeto **APL2007M3SalesReport-InlineChat** no Visual Studio Code.
 
-1. Ensure that the application runs and produces a report that resembles the following output:
+1. Verifique se o aplicativo é executado e produz um relatório semelhante à seguinte saída:
 
     ```plaintext
     Quarterly Sales Report
@@ -104,27 +104,27 @@ To create and update the data structure, complete the following steps:
     Q1: $595963.0477790226
     ```
 
-    Since the data is randomly generated, the numeric values will vary with each run.
+    Como os dados são gerados aleatoriamente, os valores numéricos variam de acordo com cada execução.
 
-1. Open the Program.cs file.
+1. Abra o arquivo Program.cs.
 
-1. Position the cursor on a blank line below the `SalesData` data structure.
+1. Posicione o cursor em uma linha em branco abaixo da estrutura de dados `SalesData`.
 
-1. To open the inline chat interface, press **Ctrl+I** on the keyboard.
+1. Para abrir a interface de chat embutido, pressione **Ctrl+I** no teclado.
 
-1. Enter the following prompt:
+1. Digite a seguinte solicitação:
 
     ```output
     I need a public struct ProdDepartments that contains a static string array for 8 clothing industry departments. Create separate string array containing 4-character abbreviations for each department name. The abbreviation must be unique. The department names should represent real department names for the clothing industry.
     ```
 
-    If you had a specific list of field names, you could provide them in the prompt. For example, actual company data could be used to specify the department names.
+    Se você tivesse uma lista específica de nomes de campo, poderia fornecê-los no prompt. Por exemplo, os dados reais da empresa podem ser usados para especificar os nomes de departamento.
 
-1. Review the suggestions provided by GitHub Copilot.
+1. Examine as sugestões fornecidas pelo GitHub Copilot.
 
-    As long as the prompt is clear and specific, GitHub Copilot should provide a useful suggestion. If the suggestion isn't what you expected, you can reject it and try again. In this case, the names of the departments aren't important, so you can probably accept the suggestion.
+    Desde que o prompt seja claro e específico, o GitHub Copilot deve fornecer uma sugestão útil. Se a sugestão não for o que você esperava, você poderá rejeitá-la e tentar novamente. Nesse caso, os nomes dos departamentos não são importantes, portanto, você provavelmente pode aceitar a sugestão.
 
-    Your data structure should resemble the following code:
+    Sua estrutura de dados deve ser semelhante ao seguinte código:
 
     ```csharp
 
@@ -136,25 +136,25 @@ To create and update the data structure, complete the following steps:
 
     ```
 
-1. To accept the suggestion, press the tab key or select **Accept**.
+1. Para aceitar a sugestão, pressione a tecla tab ou selecione **Aceitar**.
 
-    You can also use the inline chat feature to document the new code. Select the code, press **Ctrl+I** to open inline chat, enter `/doc`, review the suggested inline documentation, and then accept the update.
+    Você também pode usar o recurso de chat embutido para documentar o novo código. Selecione o código, pressione **Ctrl+I** para abrir o chat embutido, insira `/doc`, examine a documentação embutida sugerida e aceite a atualização.
 
-1. Position the cursor on a blank line below the `ProdDepartments` data structure.
+1. Posicione o cursor em uma linha em branco abaixo da estrutura de dados `ProdDepartments`.
 
-1. To open the inline chat interface, press **Ctrl+I** on the keyboard.
+1. Para abrir a interface de chat embutido, pressione **Ctrl+I** no teclado.
 
-1. Enter the following prompt:
+1. Digite a seguinte solicitação:
 
     ```output
     I need a public struct ManufacturingSites that contains a static string array for 10 manSites. Manufacturing sites should be represented by a 3-character code that includes a 2-letter ISO country code followed by a digit. Use 3 ISO country codes.
     ```
 
-    If you had a specific list of field names, you could provide them in the prompt. For example, actual company data could be used to specify the field names.
+    Se você tivesse uma lista específica de nomes de campo, poderia fornecê-los no prompt. Por exemplo, os dados reais da empresa podem ser usados para especificar os nomes de campo.
 
-1. Review the suggestions provided by GitHub Copilot.
+1. Examine as sugestões fornecidas pelo GitHub Copilot.
 
-    Your data structures should resemble the following code:
+    Suas estruturas de dados deve ser semelhante ao seguinte código:
 
     ```csharp
 
@@ -165,23 +165,23 @@ To create and update the data structure, complete the following steps:
 
     ```
 
-1. To accept the suggestion, press the tab key or select **Accept**.
+1. Para aceitar a sugestão, pressione a tecla tab ou selecione **Aceitar**.
 
-1. Select the `SalesData` data structure, and then press **Ctrl+I** to open the inline chat interface.
+1. Selecione a estrutura de dados `SalesData` e pressione **Ctrl+I** para abrir a interface de chat embutida.
 
-    You need to add fields for `baseCost` and `volumeDiscount` to the `SalesData` data structure (a `double` and an `int`). You also need to change the data type for `productID` from `int` to `string`.
+    Você precisa adicionar campos para `baseCost` e `volumeDiscount` à estrutura de dados `SalesData` (um `double` e `int`). Você também precisa alterar o tipo de dados para `productID` de `int` para `string`.
 
-1. Enter the following prompt:
+1. Digite a seguinte solicitação:
 
     ```output
     add double field baseCost and int field volumeDiscount to SalesData. Change productID from int to string.
     ```
 
-    In practice, it may be easier to make these changes manually. However, using GitHub Copilot can help you learn how to structure your prompts for better results.
+    Na prática, pode ser mais fácil fazer essas alterações manualmente. No entanto, usar o GitHub Copilot pode ajudá-lo a aprender a estruturar seus prompts para obter melhores resultados.
 
-1. Review the suggestions provided by GitHub Copilot and then select **Accept**.
+1. Examine as sugestões fornecidas pelo GitHub Copilot e selecione **Aceitar**.
 
-    Your updated SalesData data structures should resemble the following code:
+    Suas estruturas de dados SalesData atualizadas devem ser semelhantes ao seguinte código:
 
     ```csharp
 
@@ -198,60 +198,60 @@ To create and update the data structure, complete the following steps:
 
     ```
 
-With the new and updated data structures in place, you can now work on updating the `GenerateSalesData` method.
+Com as estruturas de dados novas e atualizadas em vigor, agora você pode trabalhar na atualização do método `GenerateSalesData`.
 
-### Update the GenerateSalesData method using inline chat
+### Atualizar o método GenerateSalesData usando chat embutido
 
-Your project goals indicate that you need to update the `GenerateSalesData` method to produce a data sample that resembles "actual" data. You've already updated the `SalesData` data structure to include new fields for department code and manufacturing site code. You also changed the data type for `productID` from `int` to `string`. Now you need to update the `GenerateSalesData` method to generate data for the updated fields.
+Suas metas de projeto indicam que você precisa atualizar o método `GenerateSalesData` para produzir um exemplo de dados semelhante a dados "reais". Você já atualizou a estrutura de dados `SalesData` para incluir novos campos para código de departamento e código do site de fabricação. Você também alterou o tipo de dados para `productID` de `int` para `string`. Agora você precisa atualizar o método `GenerateSalesData` para gerar dados para os campos atualizados.
 
-You need to implement the following updates:
+Você precisa implementar as seguintes atualizações:
 
-- departmentName: Update the assigned value. Assign a randomly selected department name from the `ProdDepartments` data structure.
-- productID: Update the assigned value. Format the productID using the pattern "`DDDD-###-SS-CC-MMM`" where the components of the ID are defined as follows:
+- departmentName: Atualize o valor atribuído. Atribua um nome de departamento selecionado aleatoriamente na estrutura de dados `ProdDepartments`.
+- productID: Atualize o valor atribuído. Formate a productID usando o padrão "`DDDD-###-SS-CC-MMM`" em que os componentes da ID são definidos da seguinte maneira:
 
-    - a 4-character code representing the department. Use the abbreviation from the `ProdDepartments` data structure corresponding to the assigned department name.
-    - a 3-digit number representing the product. The first digit should be the index number of the randomly selected department. The next two digits should be a random number from 1 to 99, but include leading 0s. For example, 1 should be formatted as 01.
-    - a 2-character code representing the product size. Randomly select a product size from a list of 5 sizes: XS, S, M, L, XL.
-    - a 2-character code representing the product color. Randomly select a product color from a list of 8 2-character color abbreviations: BK, BL, GR, RD, YL, OR, WT, GY.
-    - a 3-character code representing the manufacturing site. Randomly select a manufacturing site from the `ManufacturingSites` data structure.
+    - um código de 4 caracteres que representa o departamento. Use a abreviação da estrutura de dados `ProdDepartments` correspondente ao nome do departamento atribuído.
+    - um número de 3 dígitos que representa o produto. O primeiro dígito deve ser o número de índice do departamento selecionado aleatoriamente. Os próximos dois dígitos devem ser um número aleatório de 1 a 99, mas incluem 0s à esquerda. Por exemplo, 1 deve ser formatado como 01.
+    - um código de 2 caracteres que representa o tamanho do produto. Selecione aleatoriamente um tamanho de produto em uma lista de 5 tamanhos: XS, S, M, L, XL.
+    - um código de 2 caracteres que representa a cor do produto. Selecione aleatoriamente uma cor do produto em uma lista de abreviações de cores de 8 2 caracteres: BK, BL, GR, RD, YL, OU, WT, GY.
+    - um código de 3 caracteres que representa o local de fabricação. Selecione aleatoriamente um site de fabricação na estrutura de dados `ManufacturingSites`.
 
-- unitPrice: Raise the lower bound of the price range to 25 and the upper bound to 300. Assume that size and color don't affect the unit price.
-- baseCost: Assign a value to baseCost that represents manufacturing costs. Values can be generated using randomly generated discount off the unitPrice (5 to 20 percent). Not realistic, but acceptable for this demonstration.
-- volumeDiscount: Assign a value to volumeDiscount that represents a percentage discount awarded to the retail buyer. The value assigned to volumeDiscount should be the integer component of 10 percent of the quantitySold (10% of 19 units = 1% volumeDiscount).
+- unitPrice: Aumente o limite inferior da faixa de preços para 25 e o limite superior para 300. Suponha que o tamanho e a cor não afetem o preço unitário.
+- baseCost: Atribua um valor a baseCost que representa os custos de fabricação. Os valores podem ser gerados usando o desconto gerado aleatoriamente na unitPrice (5 a 20%). Não realista, mas aceitável para esta demonstração.
+- volumeDiscount: Atribua um valor a volumeDiscount que representa um desconto percentual concedido ao comprador de varejo. O valor atribuído a volumeDiscount deve ser o componente inteiro de 10% da quantitySold (10% de 19 unidades = 1% volumeDiscount).
 
-To update the `GenerateSalesData` method, complete the following steps:
+Para atualizar o método `GenerateSalesData`, conclua as seguintes etapas:
 
-1. Locate the `GenerateSalesData` method in the Program.cs file.
+1. Localize o método `GenerateSalesData` no arquivo Program.cs.
 
-1. Select the code line used to assign the `departmentName` value.
+1. Selecione a linha de código usada para atribuir o valor `departmentName`.
 
-1. To open the inline chat interface, press **Ctrl+I** on the keyboard.
+1. Para abrir a interface de chat embutido, pressione **Ctrl+I** no teclado.
 
-1. Enter the following prompt:
+1. Digite a seguinte solicitação:
 
     ```output
     Update the departmentName assignment to randomly select a department name. Use the ProdDepartments data structure. 
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. Examine as sugestões fornecidas pelo GitHub Copilot, e selecione **Aceitar**.
 
-1. Create three blank code lines after the `departmentName` assignment.
+1. Crie três linhas de código em branco após a atribuição de `departmentName`.
 
-1. Take a minute to consider how you want to construct the value assigned to `productID`.
+1. Leve um minuto para considerar como você deseja construir o valor atribuído a `productID`.
 
-    The productID values should be formatted as "`DDDD-###-SS-CC-MMM`" where the components of the ID are defined as follows:
+    Os valores productID devem ser formatados como "`DDDD-###-SS-CC-MMM`" em que os componentes da ID são definidos da seguinte maneira:
 
-    - `DDDD` is a 4-character code representing the department. Use the abbreviation from the `ProdDepartments` data structure corresponding to the assigned department name.
-    - `###` is 3 numeric characters representing a product. The first digit is the index number of the department. Next is a random number 1-99 with a leading 0 (for example: "07").
-    - `SS` is a 2-character code representing the product size. Randomly select a product size from a list of 5 sizes: XS, S, M, L, XL.
-    - `CC` is a 2-character code representing the product color. Randomly select a product color from a list of 8 2-character color abbreviations: BK, BL, GR, RD, YL, OR, WT, GY.
-    - `MMM` is a 3-character code representing the manufacturing site. Randomly select a manufacturing site from the `ManufacturingSites` data structure.
+    - `DDDD` é um código de 4 caracteres que representa o departamento. Use a abreviação da estrutura de dados `ProdDepartments` correspondente ao nome do departamento atribuído.
+    - `###` são 3 caracteres numéricos que representam um produto. O primeiro dígito é o número de índice do departamento. Em seguida, é um número aleatório 1-99 com um 0 à esquerda (por exemplo: "07").
+    - `SS` é um código de 2 caracteres que representa o tamanho do produto. Selecione aleatoriamente um tamanho de produto em uma lista de 5 tamanhos: XS, S, M, L, XL.
+    - `CC` é um código de 2 caracteres que representa a cor do produto. Selecione aleatoriamente uma cor do produto em uma lista de abreviações de cores de 8 2 caracteres: BK, BL, GR, RD, YL, OU, WT, GY.
+    - `MMM` é um código de 3 caracteres que representa o site de fabricação. Selecione aleatoriamente um site de fabricação na estrutura de dados `ManufacturingSites`.
 
-    This formatting specification is too complex to describe as a single prompt. It should be broken down into smaller steps.
+    Essa especificação de formatação é muito complexa para descrever como um único prompt. Ele deve ser dividido em etapas menores.
 
-    It's worth noting that the index number of the selected departmentName can be used to select the departmentAbbreviation and to calculate the first digit of the product number.
+    Vale a pena observar que o número de índice de departmentName selecionado pode ser usado para selecionar o departmentAbbreviation e calcular o primeiro dígito do número do produto.
 
-1. Copy the following variable declarations and paste them at the location of the second blank code line that you created.
+1. Copie as declarações de variável a seguir e cole-as no local da segunda linha de código em branco que você criou.
 
     ```csharp
 
@@ -265,90 +265,90 @@ To update the `GenerateSalesData` method, complete the following steps:
 
     ```
 
-    You should have a blank code line before and after the variable declarations.
+    Você deve ter uma linha de código em branco antes e depois das declarações de variável.
 
-    Variable declarations aren't required for inline chat to generate code update suggestions from a prompt, but they do help anchor GitHub Copilot to a specific line of code where the update belongs.
+    As declarações de variável não são necessárias para o chat embutido gerar sugestão de atualização de código de uma solicitação, mas elas ajudam a indicar o GitHub Copilot em uma linha de código específica à qual a atualização pertence.
 
-1. Select the `int indexOfDept = 0;` code line, open the inline chat, and then enter the following prompt:
+1. Selecione a linha de código `int indexOfDept = 0;`, abra o chat embutido e insira o seguinte prompt:
 
     ```output
     Assign the array index for departmentName to indexOfDept.
     ```
 
-1. Review the suggestions provided by GitHub Copilot.
+1. Examine as sugestões fornecidas pelo GitHub Copilot.
 
-    You should see a suggestion that assigns the array index number corresponding to the selected departmentName to indexOfDept.
+    Você deve ver uma sugestão que atribui o número de índice da matriz correspondente ao departmentName selecionado para indexOfDept.
 
-    If you don't get the expected suggestion, you can select **Discard** to reject the suggestion and try again. The following prompt provides additional context for the assignment:
+    Se você não receber a sugestão esperada, poderá selecionar **Descartar** para rejeitar a sugestão e tentar novamente. O prompt a seguir fornece contexto adicional para a atribuição:
 
     ```output
     Create an int named indexOfDept. Assign the array index number corresponding to the selected departmentName to indexOfDept.
     ```
 
-    This prompt specifies creating an integer variable named `indexOfDept` as well as how to assign a value. You could run this prompt without creating/selecting the variable declaration, but GitHub Copilot can occasionally lose its anchor point when you open the inline chat without any code selected.
+    Esse prompt especifica a criação de uma variável de inteiro chamada `indexOfDept`, bem como atribuir um valor. Você pode executar esse prompt sem criar/selecionar a declaração de variável, mas o GitHub Copilot ocasionalmente pode perder seu ponto de ancoragem quando você abre o chat embutido sem nenhum código selecionado.
 
     > [!NOTE]
-    > The **Toggle Changes** button (accessible from the **More Actions** dropdown menu to the right of the **Accept** and **Discard** buttons) can be used to show/hide the code deleted by the suggested update. This can be useful when you want to see the original code and the suggested code update.
+    > O botão **Alternar Alterações** (acessível do menu suspenso **Mais Ações** à direita dos botões **Aceitar** e **Descartar**) pode ser usado para mostrar/ocultar o código excluído pela atualização sugerida. Isso pode ser útil quando você quer ver o código original com a atualizar do código sugerido.
 
-1. To accept the suggestion provided by GitHub Copilot, select **Accept**.
+1. Para aceitar a sugestão fornecida pelo GitHub Copilot, selecione **Aceitar**.
 
-1. Select the `string deptAbb = "";` code line, open the inline chat, and then enter the following prompt:
+1. Selecione a linha de código `string deptAbb = "";`, abra o chat embutido e insira o seguinte prompt:
 
     ```output
     Use indexOfDept to assign a department abbreviation to deptAbb.
     ```
 
-1. Review the suggestions provided by GitHub Copilot.
+1. Examine as sugestões fornecidas pelo GitHub Copilot.
 
-    You should see a suggestion that assigns the array index number corresponding to the selected departmentName to indexOfDept.
+    Você deve ver uma sugestão que atribui o número de índice da matriz correspondente ao departmentName selecionado para indexOfDept.
 
-1. To accept the suggestion provided by GitHub Copilot, select **Accept**.
+1. Para aceitar a sugestão fornecida pelo GitHub Copilot, selecione **Aceitar**.
 
-1. Select the `string firstDigit = "";` code line, open the inline chat, and then enter the following prompt:
+1. Selecione a linha de código `string firstDigit = "";`, abra o chat embutido e insira o seguinte prompt:
 
     ```output
     Assign indexOfDept + 1 to firstDigit.
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. Examine as sugestões fornecidas pelo GitHub Copilot, e selecione **Aceitar**.
 
-1. Select the `string string nextTwoDigits = ""; = "";` code line, open the inline chat, and then enter the following prompt:
+1. Selecione a linha de código `string string nextTwoDigits = ""; = "";`, abra o chat embutido e insira o seguinte prompt:
 
     ```output
     Assign a random number 1-99 to nextTwoDigits. Include a leading 0 for numbers less than 10.
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. Examine as sugestões fornecidas pelo GitHub Copilot, e selecione **Aceitar**.
 
-1. Select the `string sizeCode = "";` code line, open the inline chat, and then enter the following prompt:
+1. Selecione a linha de código `string sizeCode = "";`, abra o chat embutido e insira o seguinte prompt:
 
     ```output
     From the list {XS, S, M, L, XL}, randomly select a product size and assign it to sizeCode.
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. Examine as sugestões fornecidas pelo GitHub Copilot, e selecione **Aceitar**.
 
-    In this case, you should see a suggestion that assigns a randomly selected product size to the `sizeCode` variable. GitHub Copilot could suggest using one or several code lines to satisfy this prompt. Either way, it will probably suggest creating a string array of product sizes and then use `random` to assign one of the sizes to `sizeCode`.
+    Nesse caso, você deverá ver uma sugestão que atribui um tamanho de produto selecionado aleatoriamente à variável `sizeCode`. O GitHub Copilot pode sugerir o uso de uma ou várias linhas de código para atender a esse prompt. De qualquer forma, ele provavelmente sugerirá a criação de uma matriz de cadeia de caracteres de tamanhos de produto e, em seguida, usará `random` para atribuir um dos tamanhos a `sizeCode`.
 
-1. Select the `string colorCode = "";` code line, open the inline chat, and then enter the following prompt:
+1. Selecione a linha de código `string colorCode = "";`, abra o chat embutido e insira o seguinte prompt:
 
     ```output
     From the list {BK, BL, GR, RD, YL, OR, WT, GY}, randomly select a product color and assign it to colorCode.
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. Examine as sugestões fornecidas pelo GitHub Copilot, e selecione **Aceitar**.
 
-1. Select the `string manufacturingSite = "";` code line, open the inline chat, and then enter the following prompt:
+1. Selecione a linha de código `string manufacturingSite = "";`, abra o chat embutido e insira o seguinte prompt:
 
     ```output
     Assign a randomly selected manufacturing site to manufacturingSite.
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. Examine as sugestões fornecidas pelo GitHub Copilot, e selecione **Aceitar**.
 
-1. Take a minute to review your code.
+1. Reserve um minuto para revisar seu código.
 
-    You should have a series of code lines that assign values to the variables used to construct the productID. The next step is to construct the productID value.
+    Você deve ter uma série de linhas de código que atribuam valores às variáveis usadas para construir a productID. A próxima etapa é construir o valor productID.
 
     ```csharp
 
@@ -362,53 +362,53 @@ To update the `GenerateSalesData` method, complete the following steps:
 
     ```
 
-1. Select the `salesData[i].productID = random.Next(1, 101);` code line, open the inline chat, and then enter the following prompt:
+1. Selecione a linha de código `salesData[i].productID = random.Next(1, 101);`, abra o chat embutido e insira o seguinte prompt:
 
     ```output
     Add a "-" to deptAbb, nextTwoDigits, sizeCode, and colorCode. Combine deptAbb, firstDigit, nextTwoDigits, sizeCode, colorCode, and manufacturingSite to create the productID.
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. Examine as sugestões fornecidas pelo GitHub Copilot, e selecione **Aceitar**.
 
-    You should see a suggestion that constructs the productID value using the variables you assigned earlier. The suggestion should include the necessary code to format the productID as "`DDDD-###-SS-CC-MMM`".
+    Você deve ver uma sugestão que constrói o valor productID usando as variáveis atribuídas anteriormente. A sugestão deve incluir o código necessário para formatar a productID como "`DDDD-###-SS-CC-MMM`".
 
-1. Manually update the `unitPrice` assignment to use a range of 25 to 300 as follows:
+1. Atualize manualmente a atribuição `unitPrice` para usar um intervalo de 25 a 300 da seguinte maneira:
 
     ```csharp
     salesData[i].unitPrice = random.Next(25, 300) + random.NextDouble();
     ```
 
-1. Create a blank line after the `unitPrice` assignment.
+1. Crie uma linha em branco após a atribuição de `unitPrice`.
 
-1. Accept the code line completion that appears:
+1. Aceite a conclusão da linha de código exibida:
 
-    GitHub Copilot should provide a suggestion that assigns a value to `baseCost` that appears similar to the following code line:
+    O GitHub Copilot deve fornecer uma sugestão que atribua um valor a `baseCost` que aparece semelhante à seguinte linha de código:
 
     ```csharp
     salesData[i].baseCost = random.Next(10, 100) + random.NextDouble();
     ```
 
-1. Select the code line used to assign a value to `salesData[i].baseCost`, open the inline chat, and then enter the following prompt:
+1. Selecione a linha de código usada para atribuir um valor a `salesData[i].baseCost`, abra o chat embutido e insira a seguinte solicitação:
 
     ```output
     Discount the unitPrice by a random percentage between 5 and 20. Assign the result to baseCost.
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. Examine as sugestões fornecidas pelo GitHub Copilot, e selecione **Aceitar**.
 
-1. Create a blank line after the `baseCost` assignment and accept the code line completion that appears.
+1. Crie uma linha em branco após a atribuição de `baseCost` e aceite a conclusão da linha de código exibida.
 
-    GitHub Copilot should provide a suggestion that assigns a value to `volumeDiscount`.
+    O GitHub Copilot deve fornecer uma sugestão que atribua um valor a `volumeDiscount`.
 
-1. Select the code line used to assign a value to `salesData[i].volumeDiscount`, open the inline chat, and then enter the following prompt:
+1. Selecione a linha de código usada para atribuir um valor a `salesData[i].volumeDiscount`, abra o chat embutido e insira a seguinte solicitação:
 
     ```output
     Assign 10 percent of quantitySold to volumeDiscount. Truncate any fractional values.
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. Examine as sugestões fornecidas pelo GitHub Copilot, e selecione **Aceitar**.
 
-1. Your updated GenerateSalesData method should now resemble the following snippet:
+1. O método GenerateSalesData atualizado agora deve ser semelhante ao seguinte snippet:
 
     ```csharp
 
@@ -438,19 +438,19 @@ To update the `GenerateSalesData` method, complete the following steps:
 
     ```
 
-1. Save your changes.
+1. Salve suas alterações.
 
-### Update the QuarterlySalesReport method using inline chat
+### Atualizar o método QuarterlySalesReport usando chat embutido
 
-You need to update the `QuarterlySalesReport` method. Based on the project goals, you need to implement the following updates:
+Você precisa atualizar o método `QuarterlySalesReport`. Com base nas metas do projeto, você precisa implementar as seguintes atualizações:
 
-- When displaying the sales results, list the results in a logical order. For example, when listing total sale by quarter, the quarters should be listed in order from Q1 to Q4.
-- Display currency values using regional settings.
-- Add calculations for quarterly profit and profit percentage
-- Add calculations specific to individual departments: quarterly sales, profit, and profit percentage.
-- Add calculations for specific manufacturing locations: quarterly sales, profit, and profit percentage.
+- Ao exibir os resultados das vendas, liste os resultados em uma ordem lógica. Por exemplo, ao listar a venda total por trimestre, os trimestres devem ser listados em ordem do 1º ao 4º trimestre.
+- Exibir valores de moeda usando configurações regionais.
+- Adicionar cálculos para o lucro trimestral e o percentual de lucro
+- Adicione cálculos específicos a departamentos individuais: vendas trimestrais, lucro e percentual de lucro.
+- Adicione cálculos para locais de fabricação específicos: vendas trimestrais, lucro e percentual de lucro.
 
-At this point, your `QuarterlySalesReport` method should resemble the following code snippet:
+Neste ponto, seu método `QuarterlySalesReport` deve ser semelhante ao seguinte snippet de código:
 
 ```csharp
 
@@ -484,13 +484,13 @@ public void QuarterlySalesReport(SalesData[] salesData)
 
 ```
 
-To update the `QuarterlySalesReport` method, complete the following steps:
+Para atualizar o método `QuarterlySalesReport`, conclua as seguintes etapas:
 
-1. To verify the current quarterly sales report output, run the application.
+1. Para verificar a saída do relatório de vendas trimestral atual, execute o aplicativo.
 
-    You should see a list of quarterly sales results displayed in the console window. Random values are used, so numeric data varies with every run.
+    Você deve ver uma lista de resultados de vendas trimestrais exibidos na janela do console. Valores aleatórios são usados, portanto, os dados numéricos variam a cada execução.
 
-    The quarterly sales report output should resemble the following:
+    A saída do relatório de vendas trimestrais deve ser semelhante à seguinte:
 
     ```output
     Quarterly Sales Report
@@ -501,31 +501,31 @@ To update the `QuarterlySalesReport` method, complete the following steps:
     Q1: $2174302.3663762277
     ```
 
-    Notice that the quarters aren't listed in order and the currency values aren't formatted properly.
+    Observe que os trimestres não estão listados em ordem e os valores de moeda não estão formatados corretamente.
 
-    Your first task is to fix these issues.
+    Sua primeira tarefa é corrigir esses problemas.
 
-1. Locate the `QuarterlySalesReport` method in the Program.cs file.
+1. Localize o método `QuarterlySalesReport` no arquivo Program.cs.
 
-1. Select the entire method.
+1. Selecione todo o método.
 
-1. Open the inline chat interface, and then enter the following prompt:
+1. Abra a interface do chat embutido e insira a seguinte solicitação:
 
     ```output
     Update the QuarterlySalesReport method to display quarterly results in order. Format currency using regional settings. 
     ```
 
-1. Take a minute to review the suggestions provided by GitHub Copilot.
+1. Reserve um minuto para examinar as sugestões fornecidas pelo GitHub Copilot.
 
-    You should see a suggestion that includes the necessary code to calculate quarterly profit and profit percentage. The suggestion should include the necessary code to calculate the profit and profit percentage for each quarter.
+    Você deve ver uma sugestão que inclui o código necessário para calcular o lucro trimestral e a porcentagem de lucro. A sugestão deve incluir o código necessário para calcular o lucro e o percentual de lucro para cada trimestre.
 
-1. To accept the suggestion provided by GitHub Copilot, select **Accept**.
+1. Para aceitar a sugestão fornecida pelo GitHub Copilot, selecione **Aceitar**.
 
-1. Save your changes.
+1. Salve suas alterações.
 
-1. Run the application and verify that the quarterly sales results are now displayed in order and that the currency values are formatted properly.
+1. Execute o aplicativo e verifique se os resultados de vendas trimestrais agora são exibidos em ordem e se os valores de moeda estão formatados corretamente.
 
-    Although the numeric values are different, the quarterly sales report output should now be formatted similar to the following output:
+    Embora os valores numéricos sejam diferentes, a saída do relatório de vendas trimestrais agora deve ser formatada de forma semelhante à seguinte saída:
 
     ```output
     Quarterly Sales Report
@@ -537,31 +537,31 @@ To update the `QuarterlySalesReport` method, complete the following steps:
 
     ```
 
-    Your next step is to add calculations for quarterly profit and profit percentage.
+    Sua próxima etapa é adicionar cálculos para o lucro trimestral e o percentual de lucro.
 
-1. Locate the `QuarterlySalesReport` method in the Program.cs file.
+1. Localize o método `QuarterlySalesReport` no arquivo Program.cs.
 
-1. Select the entire method.
+1. Selecione todo o método.
 
-1. Open the inline chat interface, and then enter the following prompt:
+1. Abra a interface do chat embutido e insira a seguinte solicitação:
 
     ```output
     Update the QuarterlySalesReport method to include calculations for quarterly profit and profit percentage. Include the new calculations in the report output.
     ```
 
-1. Take a minute to review the suggestions provided by GitHub Copilot.
+1. Reserve um minuto para examinar as sugestões fornecidas pelo GitHub Copilot.
 
-    You should see a suggestion that includes the necessary code to calculate quarterly profit and profit percentage. The suggestion should include the necessary code to calculate the profit and profit percentage for each quarter.
+    Você deve ver uma sugestão que inclui o código necessário para calcular o lucro trimestral e a porcentagem de lucro. A sugestão deve incluir o código necessário para calcular o lucro e o percentual de lucro para cada trimestre.
 
-1. To accept the suggestion provided by GitHub Copilot, select **Accept**.
+1. Para aceitar a sugestão fornecida pelo GitHub Copilot, selecione **Aceitar**.
 
-1. Continue to select **Accept** for the remaining suggestions.
+1. Continue selecionando **Aceitar** para as sugestões restantes.
 
-1. Save your changes.
+1. Salve suas alterações.
 
-1. Run the application and verify that the quarterly sales results now include calculations for profit and profit percentage.
+1. Execute o aplicativo e verifique se os resultados de vendas trimestrais agora incluem cálculos para o lucro e o percentual de lucro.
 
-    Although the numeric values are different, the quarterly sales report output should now be formatted similar to the following output:
+    Embora os valores numéricos sejam diferentes, a saída do relatório de vendas trimestrais agora deve ser formatada de forma semelhante à seguinte saída:
 
     ```output
     Quarterly Sales Report
@@ -573,29 +573,29 @@ To update the `QuarterlySalesReport` method, complete the following steps:
 
     ```
 
-    Your next step is to add calculations for quarterly sales, profit, and profit percentage by department.
+    Sua próxima etapa é adicionar cálculos para vendas trimestrais, lucro e percentual de lucro por departamento.
 
-1. Select the entire method.
+1. Selecione todo o método.
 
-1. To open the inline chat interface, and then enter the following prompt:
+1. Para abrir a interface do chat embutido e depois inserir a seguinte solicitação:
 
     ```output
     Update the QuarterlySalesReport method to include calculations for quarterly sales, profit, and profit percentage by department. Include the new calculations in the report output. 
     ```
 
-1. Take a minute to review the suggestions provided by GitHub Copilot.
+1. Reserve um minuto para examinar as sugestões fornecidas pelo GitHub Copilot.
 
-    You should see a suggestion that includes the necessary code to calculate quarterly profit and profit percentage. The suggestion should include the necessary code to calculate the profit and profit percentage for each quarter.
+    Você deve ver uma sugestão que inclui o código necessário para calcular o lucro trimestral e a porcentagem de lucro. A sugestão deve incluir o código necessário para calcular o lucro e o percentual de lucro para cada trimestre.
 
-1. To accept the suggestion provided by GitHub Copilot, select **Accept**.
+1. Para aceitar a sugestão fornecida pelo GitHub Copilot, selecione **Aceitar**.
 
-1. Continue to select **Accept** for the remaining suggestions.
+1. Continue selecionando **Aceitar** para as sugestões restantes.
 
-1. Save your changes.
+1. Salve suas alterações.
 
-1. Run the application and verify that the quarterly sales results now include calculations for profit and profit percentage.
+1. Execute o aplicativo e verifique se os resultados de vendas trimestrais agora incluem cálculos para o lucro e o percentual de lucro.
 
-    Although the numeric values are different, the quarterly sales report output should now be formatted similar to the following output:
+    Embora os valores numéricos sejam diferentes, a saída do relatório de vendas trimestrais agora deve ser formatada de forma semelhante à seguinte saída:
 
     ```output
     Quarterly Sales Report
@@ -646,6 +646,6 @@ To update the `QuarterlySalesReport` method, complete the following steps:
 
     ```
 
-### Summary
+### Resumo
 
-In this demo, you used the inline chat feature to update the `GenerateSalesData` and `QuarterlySalesReport` methods. You added new fields to the `SalesData` data structure and then updated the `GenerateSalesData` method to generate data for the new fields. You also updated the `QuarterlySalesReport` method to include calculations for quarterly profit and profit percentage. You also added calculations for quarterly sales, profit, and profit percentage by department.
+Nesta demonstração, você usou o recurso de chat embutido para atualizar os métodos `GenerateSalesData` e `QuarterlySalesReport`. Você adicionou novos campos à estrutura de dados `SalesData` e atualizou o método `GenerateSalesData` para gerar dados para os novos campos. Você também atualizou o método `QuarterlySalesReport` para incluir cálculos para o lucro trimestral e o percentual de lucro. Você também adicionou cálculos para vendas trimestrais, lucro e percentual de lucro por departamento.
